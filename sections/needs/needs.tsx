@@ -8,6 +8,7 @@ const problems = [
   { icon: MessageSquareText, text: "Dependés de Instagram o repetís las mismas respuestas por WhatsApp." },
   { icon: TimerReset, text: "Coordinás consultas y turnos manualmente y perdés tiempo." },
   { icon: CalendarCheck, text: "Recibís consultas, pero no tenés un camino simple para convertirlas en clientes." },
+  
 ];
 
 export function Needs() {
