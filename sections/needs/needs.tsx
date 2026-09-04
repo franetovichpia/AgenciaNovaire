@@ -17,12 +17,12 @@ export function Needs() {
       <Container>
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#cdbda9]">Tu próximo paso digital</span>
+            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#cdbda9]">El problema real</span>
             <h2 className="mt-5 max-w-2xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.055em] text-white sm:text-6xl">
-              Si sos profesional y todavía no tenés página, tus clientes igual te están buscando.
+              No es falta de interés. Es que cuesta encontrarte, entenderte o reservar con vos.
             </h2>
             <p className="mt-7 max-w-xl text-base leading-8 text-white/65">
-              El problema no siempre es la falta de interés: muchas veces es que cuesta encontrarte, entender tu propuesta o reservar contigo. Diseñamos una solución clara para que tu presencia digital trabaje incluso cuando vos no estás conectado.
+              Estas son las cuatro cosas que más te están frenando ahora mismo. Diseñamos tu presencia digital para resolverlas, incluso cuando vos no estás conectado.
             </p>
           </div>
 
@@ -49,4 +49,3 @@ export function Needs() {
     </section>
   );
 }
-
