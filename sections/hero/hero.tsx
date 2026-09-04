@@ -23,7 +23,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-sm font-medium uppercase tracking-[0.3em] text-muted-foreground"
           >
-            Estudio digital
+            Sitios web para profesionales y negocios
           </motion.p>
 
           <motion.h1
@@ -43,12 +43,15 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight tracking-[-0.04em] text-foreground sm:text-5xl lg:text-6xl">
-              Creamos experiencias digitales...
+              Si sos profesional y no tenés página web, estás perdiendo
+              clientes todos los días.
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-              Diseñamos páginas web, sistemas de gestión y aplicaciones
-              personalizadas con una estética clara, estratégica y moderna.
+              Mientras tu competencia aparece primero en Google y agenda
+              turnos sola, vos seguís contestando lo mismo por WhatsApp una y
+              otra vez. Te armamos una web que vende y agenda por vos, incluso
+              cuando no estás conectado.
             </p>
           </motion.div>
 
@@ -59,10 +62,10 @@ export function Hero() {
             className="flex flex-col gap-4 lg:items-end"
           >
             <Link
-              href="#contact"
+              href="/agendar"
               className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition duration-300 hover:-translate-y-0.5 hover:bg-[#b9642f]"
             >
-              Contanos tu proyecto
+              Agendar una reunión gratis
               <ArrowRight className="h-4 w-4" />
             </Link>
 
