@@ -18,7 +18,7 @@ export function Needs() {
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#cdbda9]">El problema real</span>
-            <h2 className="mt-5 max-w-2xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.055em] text-white sm:text-6xl">
+            <h2 className="mt-5 max-w-2xl font-display text-3xl font-medium leading-[1.05] tracking-[-0.055em] text-white sm:text-5xl">
               No es falta de interés. Es que cuesta encontrarte, entenderte o reservar con vos.
             </h2>
             <p className="mt-7 max-w-xl text-base leading-8 text-white/65">

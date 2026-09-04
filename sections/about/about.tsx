@@ -42,7 +42,7 @@ export function About() {
 
             <div className="mt-8 flex aspect-[4/5] items-end overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#efd3bd] via-[#f8eee5] to-[#d77d3e] p-8">
               <div className="rounded-[1.5rem] border border-white/40 bg-white/25 p-6 backdrop-blur-xl">
-                <p className="font-display text-3xl font-medium leading-tight tracking-[-0.04em] text-[#241c17]">
+                <p className="font-display text-2xl font-medium leading-tight tracking-[-0.04em] text-[#241c17]">
                   Estrategia, diseño y desarrollo trabajando en una misma
                   dirección.
                 </p>
@@ -56,7 +56,7 @@ export function About() {
             viewport={{ once: true, amount: 0.2 }}
             className="flex flex-col justify-center"
           >
-            <h2 className="font-display text-4xl font-medium leading-tight tracking-[-0.05em] sm:text-5xl lg:text-6xl">
+            <h2 className="font-display text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-4xl lg:text-5xl">
               Creamos herramientas digitales que ayudan a los negocios a verse
               mejor, trabajar mejor y crecer.
             </h2>

@@ -6,6 +6,8 @@ import {
   isWeekday,
   meetingTypes,
 } from "@/lib/booking";
+import { createCalendarEvent } from "@/lib/notifications/google-calendar";
+import { sendBookingEmail } from "@/lib/notifications/email";
 import { createSupabaseAdmin } from "@/lib/supabase-server";
 
 const datePattern = /^\d{4}-\d{2}-\d{2}$/;
@@ -99,6 +101,21 @@ export async function POST(request: Request) {
     }
 
     if (error) throw error;
+
+    const booking = { name, email, phone, meetingType, message, date, time };
+
+    const [emailResult, calendarResult] = await Promise.allSettled([
+      sendBookingEmail(booking),
+      createCalendarEvent(booking),
+    ]);
+
+    if (emailResult.status === "rejected") {
+      console.error("Error sending booking email", emailResult.reason);
+    }
+
+    if (calendarResult.status === "rejected") {
+      console.error("Error creating calendar event", calendarResult.reason);
+    }
 
     return Response.json({ success: true }, { status: 201 });
   } catch (error) {

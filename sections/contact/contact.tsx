@@ -35,7 +35,7 @@ export function Contact() {
               Contacto
             </span>
 
-            <h2 className="mt-5 font-display text-5xl font-medium leading-[1.02] tracking-[-0.055em] sm:text-6xl">
+            <h2 className="mt-5 font-display text-4xl font-medium leading-[1.02] tracking-[-0.055em] sm:text-5xl">
               Contanos qué querés crear.
             </h2>
 

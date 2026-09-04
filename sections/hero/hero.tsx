@@ -30,7 +30,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-5 font-display text-[18vw] font-semibold leading-[0.82] tracking-[-0.085em] text-foreground sm:text-[14vw] lg:text-[11.5vw]"
+            className="mt-5 font-display text-[15vw] font-semibold leading-[0.82] tracking-[-0.085em] text-foreground sm:text-[12vw] lg:text-[9.5vw]"
           >
             NOVAIRE
           </motion.h1>
@@ -42,9 +42,11 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <h2 className="max-w-4xl font-display text-4xl font-medium leading-tight tracking-[-0.04em] text-foreground sm:text-5xl lg:text-6xl">
-              Si sos profesional y no tenés página web, estás perdiendo
-              clientes todos los días.
+            <h2 className="max-w-4xl font-display text-3xl font-medium leading-tight tracking-[-0.04em] text-foreground sm:text-4xl lg:text-5xl">
+              Si sos profesional y no tenés página web,{" "}
+              <span className="text-primary">
+                estás perdiendo clientes todos los días.
+              </span>
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
@@ -75,6 +77,10 @@ export function Hero() {
             >
               Ver proyectos
             </Link>
+
+            <p className="text-xs text-muted-foreground lg:text-right">
+              Sin costo · 30 minutos · Sin compromiso
+            </p>
           </motion.div>
         </div>
       </Container>

@@ -37,6 +37,7 @@ const projects: Project[] = [
     label: "Mobile App",
     images: [
       "/projects/la-piccola/inicio-registro1.png",
+      "/projects/la-piccola/branding.png",
     ],
     background: "bg-[#ead4c0]",
     imagePosition: "object-center",
@@ -49,6 +50,8 @@ const projects: Project[] = [
     label: "Landing Page",
     images: [
       "/projects/sonrisa/1.png",
+      "/projects/sonrisa/servicios.png",
+      "/projects/sonrisa/opiniones.png",
     ],
     background: "bg-[#eee9e2]",
     imagePosition: "object-top",
@@ -61,8 +64,22 @@ const projects: Project[] = [
     label: "Portfolio",
     images: [
       "/projects/arqstudio/home.png",
+      "/projects/arqstudio/servicios.png",
+      "/projects/arqstudio/contacto.png",
     ],
     background: "bg-[#ded3c8]",
+    imagePosition: "object-top",
+  },
+  {
+    title: "Pipi Deco & Balloons",
+    category: "Landing page · Eventos y decoración",
+    description:
+      "Sitio para un emprendimiento de globología y decoración de eventos, con catálogo de servicios, galería de trabajos y pedido de presupuesto directo por WhatsApp.",
+    label: "Landing Page",
+    images: [
+      "/projects/pipi-balloons/home.png",
+    ],
+    background: "bg-[#f3ded9]",
     imagePosition: "object-top",
   },
 ];
@@ -149,7 +166,7 @@ export function Projects() {
                         {project.category}
                       </span>
 
-                      <h3 className="mt-5 font-display text-4xl font-medium tracking-[-0.05em] sm:text-5xl">
+                      <h3 className="mt-5 font-display text-3xl font-medium tracking-[-0.05em] sm:text-4xl">
                         {project.title}
                       </h3>
 

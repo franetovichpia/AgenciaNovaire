@@ -136,7 +136,7 @@ export function Services() {
             Nuestros servicios
           </span>
 
-          <h2 className="mt-5 font-display text-4xl font-medium leading-tight tracking-[-0.05em] sm:text-5xl lg:text-6xl">
+          <h2 className="mt-5 font-display text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-4xl lg:text-5xl">
             Soluciones digitales que se adaptan a cada etapa de un negocio.
           </h2>
 
@@ -199,7 +199,7 @@ export function Services() {
                     </div>
                   </div>
 
-                  <h3 className="mt-14 max-w-[280px] font-display text-3xl font-medium leading-none tracking-[-0.05em] sm:text-4xl">
+                  <h3 className="mt-14 max-w-[280px] font-display text-2xl font-medium leading-none tracking-[-0.05em] sm:text-3xl">
                     {service.title}
                   </h3>
 
