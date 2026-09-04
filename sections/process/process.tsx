@@ -65,7 +65,7 @@ export function Process() {
             >
               <span className="text-sm text-[#e39a61]">{step.number}</span>
 
-              <h3 className="font-display text-3xl font-medium tracking-[-0.04em] text-white">
+              <h3 className="font-display text-2xl font-medium tracking-[-0.04em] text-white">
                 {step.title}
               </h3>
 

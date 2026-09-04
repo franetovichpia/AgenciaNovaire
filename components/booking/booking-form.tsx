@@ -89,7 +89,7 @@ export function BookingForm() {
     return (
       <div className="flex min-h-[600px] flex-col items-center justify-center p-8 text-center sm:p-12">
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10"><CheckCircle2 className="h-8 w-8 text-primary" /></div>
-        <h2 className="mt-7 font-display text-4xl font-medium tracking-[-0.05em]">¡Reunión confirmada!</h2>
+        <h2 className="mt-7 font-display text-3xl font-medium tracking-[-0.05em]">¡Reunión confirmada!</h2>
         <p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground">Reservamos tu reunión para el {date.split("-").reverse().join("/")} a las {time}. Nos pondremos en contacto para enviarte el enlace.</p>
         <Link href="/" className="mt-8 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground">Volver al inicio</Link>
       </div>

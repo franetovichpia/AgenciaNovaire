@@ -22,7 +22,7 @@ export default function BookingPage() {
           <aside className="relative overflow-hidden bg-foreground p-8 text-white sm:p-12">
             <div className="absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-primary/30 blur-[100px]" />
             <span className="relative text-sm font-semibold uppercase tracking-[0.22em] text-[#cdbda9]">Primera conversación</span>
-            <h1 className="relative mt-5 font-display text-4xl font-medium leading-tight tracking-[-0.05em] text-white sm:text-5xl">Hablemos de tu proyecto.</h1>
+            <h1 className="relative mt-5 font-display text-3xl font-medium leading-tight tracking-[-0.05em] text-white sm:text-4xl">Hablemos de tu proyecto.</h1>
             <p className="relative mt-6 text-sm leading-7 text-white/65">Elegí el día y el horario que te resulte más cómodo. La reunión es para conocernos, entender tu necesidad y orientarte sobre los próximos pasos.</p>
 
             <div className="relative mt-10 space-y-4 border-t border-white/10 pt-8">
