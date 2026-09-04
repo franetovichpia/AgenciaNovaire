@@ -1,5 +1,3 @@
-import nodemailer from "nodemailer";
-
 type BookingDetails = {
   name: string;
   email: string;
@@ -25,6 +23,8 @@ export async function sendBookingEmail(booking: BookingDetails) {
     );
     return;
   }
+
+  const { default: nodemailer } = await import("nodemailer");
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
