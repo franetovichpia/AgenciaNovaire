@@ -1,5 +1,3 @@
-import { google } from "googleapis";
-
 import { BOOKING_DURATION_MINUTES, BOOKING_TIME_ZONE } from "@/lib/booking";
 
 type BookingDetails = {
@@ -23,6 +21,8 @@ export async function createCalendarEvent(booking: BookingDetails) {
     );
     return;
   }
+
+  const { google } = await import("googleapis");
 
   const auth = new google.auth.JWT({
     email: clientEmail,
