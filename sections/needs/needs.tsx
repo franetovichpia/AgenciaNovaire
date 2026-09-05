@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, CalendarCheck, MessageSquareText, SearchX, TimerReset } from "lucide-react";
 
 import { Container } from "@/components/common/container";
@@ -16,7 +19,12 @@ export function Needs() {
       <div className="absolute -right-24 top-12 h-72 w-72 rounded-full bg-primary/30 blur-[110px]" />
       <Container>
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.65, ease: "easeOut" }}
+          >
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#cdbda9]">El problema real</span>
             <h2 className="mt-5 max-w-2xl font-display text-3xl font-medium leading-[1.05] tracking-[-0.055em] text-white sm:text-5xl">
               No es falta de interés. Es que cuesta encontrarte, entenderte o reservar con vos.
@@ -24,14 +32,21 @@ export function Needs() {
             <p className="mt-7 max-w-xl text-base leading-8 text-white/65">
               Estas son las cuatro cosas que más te están frenando ahora mismo. Diseñamos tu presencia digital para resolverlas, incluso cuando vos no estás conectado.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid gap-3 sm:grid-cols-2">
-            {problems.map(({ icon: Icon, text }) => (
-              <div key={text} className="rounded-3xl border border-white/10 bg-white/[0.055] p-6 backdrop-blur-sm">
+            {problems.map(({ icon: Icon, text }, index) => (
+              <motion.div
+                key={text}
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.1 }}
+                className="rounded-3xl border border-white/10 bg-white/[0.055] p-6 backdrop-blur-sm"
+              >
                 <Icon className="h-5 w-5 text-[#cdbda9]" />
                 <p className="mt-5 text-sm leading-7 text-white/75">{text}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

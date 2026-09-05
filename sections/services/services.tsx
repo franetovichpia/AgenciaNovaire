@@ -176,12 +176,13 @@ export function Services() {
             return (
               <motion.article
                 key={service.title}
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                initial={{ opacity: 0, x: 90 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
                 transition={{
-                  duration: 0.55,
-                  delay: index * 0.05,
+                  duration: 0.6,
+                  ease: "easeOut",
+                  delay: index * 0.08,
                 }}
             className={`group relative flex min-h-[430px] w-[78vw] max-w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-[2rem] p-6 sm:w-[350px] sm:p-7 ${service.background} ${service.foreground}`}              >
                 <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full border border-current opacity-10" />
