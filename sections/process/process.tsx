@@ -54,12 +54,12 @@ export function Process() {
           {steps.map((step, index) => (
             <motion.article
               key={step.number}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -70 : 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
               transition={{
-                duration: 0.5,
-                delay: index * 0.05,
+                duration: 0.6,
+                ease: "easeOut",
               }}
               className="grid gap-6 border-t border-white/15 py-9 md:grid-cols-[0.25fr_0.75fr_1fr] md:items-start"
             >
