@@ -184,23 +184,25 @@ export function Services() {
                   ease: "easeOut",
                   delay: index * 0.08,
                 }}
-            className={`group relative flex min-h-[430px] w-[78vw] max-w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-[2rem] p-6 sm:w-[350px] sm:p-7 ${service.background} ${service.foreground}`}              >
-                <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full border border-current opacity-10" />
-
-                <div className="absolute -right-7 -top-7 h-32 w-32 rounded-full border border-current opacity-10 transition-transform duration-500 group-hover:scale-125" />
+                whileHover={{ y: -6 }}
+                className={`group relative flex min-h-[430px] w-[78vw] max-w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-[2rem] p-7 shadow-xl shadow-black/5 ring-1 ring-current/10 transition-shadow duration-300 hover:shadow-2xl sm:w-[350px] ${service.background} ${service.foreground}`}
+              >
+                <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-current opacity-[0.07] blur-2xl transition-transform duration-500 group-hover:scale-110" />
 
                 <div>
                   <div className="flex items-start justify-between">
-                    <span className={`text-sm font-medium ${service.muted}`}>
-                      {service.number}
+                    <span
+                      className={`text-xs font-semibold uppercase tracking-[0.18em] ${service.muted}`}
+                    >
+                      Servicio {service.number}
                     </span>
 
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full border border-current/20 bg-white/10 backdrop-blur">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-current/10 backdrop-blur">
                       <Icon className="h-5 w-5" />
                     </div>
                   </div>
 
-                  <h3 className="mt-14 max-w-[280px] font-display text-2xl font-medium leading-none tracking-[-0.05em] sm:text-3xl">
+                  <h3 className="mt-12 max-w-[280px] font-display text-2xl font-medium leading-none tracking-[-0.05em] sm:text-3xl">
                     {service.title}
                   </h3>
 
@@ -210,29 +212,17 @@ export function Services() {
                 </div>
 
                 <div>
-                  <div className="mb-7 h-px w-full bg-current opacity-15" />
+                  <div className="mb-6 h-px w-full bg-current opacity-10" />
 
                   <div className="flex flex-wrap gap-2">
                     {service.features.map((feature) => (
                       <span
                         key={feature}
-                        className="rounded-full border border-current/20 px-3 py-1.5 text-xs"
+                        className="rounded-full bg-current/[0.08] px-3 py-1.5 text-xs font-medium"
                       >
                         {feature}
                       </span>
                     ))}
-                  </div>
-
-                  <div className="mt-8 flex items-center justify-between">
-                    <span
-                      className={`text-xs uppercase tracking-[0.18em] ${service.muted}`}
-                    >
-                      Explorar servicio
-                    </span>
-
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-current/20 transition-transform duration-300 group-hover:-rotate-45">
-                      <ArrowRight className="h-4 w-4" />
-                    </div>
                   </div>
                 </div>
               </motion.article>
