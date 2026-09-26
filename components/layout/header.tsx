@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 import { Container } from "@/components/common/container";
+import { ThemeToggle } from "@/components/common/theme-toggle";
 import { navigation } from "@/data/site";
 
 export function Header() {
@@ -24,7 +25,7 @@ export function Header() {
             onClick={closeMenu}
           >
             Novaire
-            <span className="text-primary">.</span>
+            <span className="text-accent">.</span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -40,6 +41,8 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
+            <ThemeToggle />
+
             <Link
               href="/agendar"
               className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
@@ -48,19 +51,23 @@ export function Header() {
             </Link>
           </div>
 
-          <button
-            type="button"
-            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={isOpen}
-            onClick={() => setIsOpen((current) => !current)}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-border lg:hidden"
-          >
-            {isOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </button>
+          <div className="flex items-center gap-3 lg:hidden">
+            <ThemeToggle />
+
+            <button
+              type="button"
+              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isOpen}
+              onClick={() => setIsOpen((current) => !current)}
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-border"
+            >
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
+          </div>
         </div>
 
         {isOpen ? (
