@@ -6,7 +6,6 @@ import { Contact } from "@/sections/contact/contact";
 import { Faq } from "@/sections/faq/faq";
 import { Hero } from "@/sections/hero/hero";
 import { Needs } from "@/sections/needs/needs";
-import { Process } from "@/sections/process/process";
 import { Projects } from "@/sections/projects/projects";
 import { Services } from "@/sections/services/services";
 
@@ -20,7 +19,6 @@ export default function HomePage() {
         <Needs />
         <Services />
         <Projects />
-        <Process />
         <About />
         <Faq />
         <Contact />

@@ -40,11 +40,22 @@ export function About() {
               Sobre Novaire
             </span>
 
-            <div className="mt-8 flex aspect-[4/5] items-end overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#efd3bd] via-[#f8eee5] to-[#d77d3e] p-8">
-              <div className="rounded-[1.5rem] border border-white/40 bg-white/25 p-6 backdrop-blur-xl">
-                <p className="font-display text-2xl font-medium leading-tight tracking-[-0.04em] text-[#241c17]">
+            <div className="relative mt-8 flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[2rem] bg-[#171310] p-8">
+              <div className="absolute -left-16 top-10 h-56 w-56 rounded-full bg-primary/25 blur-[100px]" />
+              <div className="absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-accent/20 blur-[90px]" />
+
+              <span className="relative font-evolve text-7xl tracking-[-0.03em]" style={{ color: "#fff1b5" }}>
+                N.
+              </span>
+
+              <div className="relative rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 backdrop-blur-xl">
+                <p className="font-display text-2xl font-medium leading-tight tracking-[-0.04em] text-white">
                   Estrategia, diseño y desarrollo trabajando en una misma
                   dirección.
+                </p>
+
+                <p className="mt-4 text-xs uppercase tracking-[0.2em] text-white/50">
+                  Estudio Novaire
                 </p>
               </div>
             </div>
