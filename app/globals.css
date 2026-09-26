@@ -1,26 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fbf7f2;
-  --foreground: #171513;
-
-  --card: #ffffff;
-  --card-foreground: #171513;
-
-  --primary: #d47a3a;
-  --primary-foreground: #ffffff;
-
-  --secondary: #f3e8dc;
-  --secondary-foreground: #1f1b17;
-
-  --muted: #f7efe7;
-  --muted-foreground: #756b63;
-
-  --border: #e8ddd2;
-  --ring: #d47a3a;
-}
-
-:root {
   /* ===========================
       COLORES
   =========================== */
@@ -43,18 +23,49 @@
   --border: #e6dfd6;
   --ring: #b6a48d;
 
+  --accent: #fff1b5;
+  --accent-foreground: #3a3120;
+
   /* ===========================
       TIPOGRAFÍA
   =========================== */
 
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
+  --font-evolve: var(--font-evolve);
 
   /* ===========================
       BORDES
   =========================== */
 
   --radius: 1.5rem;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #14120f;
+  --foreground: #f3efe8;
+
+  --card: #1c1915;
+  --card-foreground: #f3efe8;
+
+  --primary: #c2ac8e;
+  --primary-foreground: #171310;
+
+  --secondary: #26221c;
+  --secondary-foreground: #ece5da;
+
+  --muted: #201c17;
+  --muted-foreground: #a89c8c;
+
+  --border: #322c24;
+  --ring: #c2ac8e;
+
+  --accent: #fff1b5;
+  --accent-foreground: #2a2410;
+
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -73,6 +84,9 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
 
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
   --color-border: var(--border);
   --color-ring: var(--ring);
 
@@ -80,6 +94,7 @@
 
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
+  --font-evolve: var(--font-evolve);
 }
 
 /* ===========================
@@ -109,6 +124,11 @@ body {
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.font-evolve {
+  font-family: var(--font-evolve);
 }
 
 /* ===========================
@@ -269,4 +289,19 @@ select {
 
 #services [class*="overflow-x-auto"]::-webkit-scrollbar {
   display: none;
+}
+
+/* ===========================
+    PROJECT CARDS (blur / glass)
+=========================== */
+
+.project-glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px) saturate(1.1);
+  -webkit-backdrop-filter: blur(18px) saturate(1.1);
+}
+
+.text-accent-glow {
+  text-shadow: 0 0 24px rgba(255, 241, 181, 0.35);
 }
