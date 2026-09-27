@@ -139,7 +139,7 @@ export const projects: Project[] = [
       "Enfoque en conversión a reserva",
       "Diseño cálido y profesional",
     ],
-    images: [],
+    images: ["/projects/nucleo-pilates/home.png"],
     tint: "from-[#332318] via-[#20160e] to-[#0f0a06]",
     whatsappName: "Estudio Núcleo Pilates",
   },

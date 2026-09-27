@@ -152,7 +152,7 @@ export function Projects() {
                           alt=""
                           fill
                           sizes="190px"
-                          className="object-cover"
+                          className="object-cover object-top"
                         />
                       ) : (
                         <div className="flex h-full w-full items-center justify-center p-4">
