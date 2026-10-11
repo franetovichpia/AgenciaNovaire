@@ -7,7 +7,18 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 import { ProjectModal } from "@/components/projects/project-modal";
-import { projects, type Project } from "@/data/site";
+import { projects as allProjects, type Project } from "@/data/site";
+
+const FEATURED_SLUGS = [
+  "arqstudio",
+  "nucleo-pilates",
+  "la-piccola",
+  "pipi-balloons",
+];
+
+const projects = FEATURED_SLUGS.flatMap((slug) =>
+  allProjects.filter((project) => project.slug === slug),
+);
 
 const CARD_WIDTH = 190;
 const CARD_HEIGHT = 270;
