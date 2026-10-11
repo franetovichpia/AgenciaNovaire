@@ -85,7 +85,10 @@ export const projects: Project[] = [
       "Visor y recorrido 3D de proyectos",
       "Portfolio interactivo",
     ],
-    images: [],
+    images: [
+      "/projects/bim-3d-5d/escritorio.jpg",
+      "/projects/bim-3d-5d/monitor.jpg",
+    ],
     tint: "from-[#3a2230] via-[#241620] to-[#120a0f]",
     whatsappName: "Arquitectura BIM 3D y 5D",
   },
@@ -103,7 +106,11 @@ export const projects: Project[] = [
       "Trayectoria profesional",
       "Propiedades destacadas",
     ],
-    images: [],
+    images: [
+      "/projects/landing-arquitecta/hero.jpg",
+      "/projects/landing-arquitecta/home.jpg",
+      "/projects/landing-arquitecta/contacto.jpg",
+    ],
     tint: "from-[#1f2a2c] via-[#131c1d] to-[#0a1011]",
     whatsappName: "esta landing de arquitectura",
   },
@@ -121,9 +128,54 @@ export const projects: Project[] = [
       "Panel administrativo a medida",
       "Autogestión de contenido",
     ],
-    images: [],
+    images: [
+      "/projects/portal-comunicativo/sofa.jpg",
+      "/projects/portal-comunicativo/laptop.jpg",
+    ],
     tint: "from-[#233327] via-[#15201a] to-[#0b120e]",
     whatsappName: "este proyecto comunicativo",
+  },
+  {
+    slug: "norte-logistica",
+    title: "Norte Logística",
+    category: "Landing page · Logística",
+    label: "Landing page",
+    summary:
+      "Landing page para una empresa de transporte y logística, enfocada en cotizaciones de envío.",
+    description:
+      "Landing page para una empresa de logística, con un mensaje claro, identidad visual fuerte y llamadas a la acción pensadas para que los clientes coticen su envío.",
+    highlights: [
+      "Enfoque en cotización de envíos",
+      "Identidad visual propia",
+      "Llamadas a la acción claras",
+    ],
+    images: ["/projects/norte-logistica/home.jpg"],
+    tint: "from-[#3a2418] via-[#21150e] to-[#100a06]",
+    whatsappName: "Norte Logística",
+  },
+  {
+    slug: "turnia",
+    title: "Turnia · Agenda digital",
+    category: "Aplicación web · Reservas",
+    label: "Agenda online",
+    summary:
+      "Agenda digital para reservar reuniones online: el cliente elige fecha y horario y la reserva queda registrada al instante.",
+    description:
+      "Agenda digital para organizar turnos y reuniones online sin mensajes de ida y vuelta. El cliente elige fecha y horario, completa sus datos y la reserva queda registrada al instante, con disponibilidad siempre actualizada.",
+    highlights: [
+      "Reservas online en un solo lugar",
+      "Datos de contacto organizados",
+      "Disponibilidad actualizada",
+    ],
+    images: [
+      "/projects/turnia/portada.jpg",
+      "/projects/turnia/calendario.jpg",
+      "/projects/turnia/agenda.jpg",
+      "/projects/turnia/reserva.jpg",
+      "/projects/turnia/laptop.jpg",
+    ],
+    tint: "from-[#3a2218] via-[#22140e] to-[#100a06]",
+    whatsappName: "Turnia, la agenda digital",
   },
   {
     slug: "nucleo-pilates",
