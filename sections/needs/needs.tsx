@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, CalendarCheck, MessageSquareText, SearchX, TimerReset } from "lucide-react";
+import { CalendarCheck, MessageSquareText, SearchX, TimerReset } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 
@@ -15,10 +15,11 @@ const problems = [
 
 export function Needs() {
   return (
-    <section id="solutions" className="relative overflow-hidden bg-foreground py-28 text-background sm:py-32">
-      <div className="absolute -right-24 top-12 h-72 w-72 rounded-full bg-primary/30 blur-[110px]" />
-      <Container>
-        <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+    <section id="solutions" className="relative overflow-hidden bg-[#14120f] py-16 text-white sm:py-24">
+      <Image src="/brand/hojas.jpg" alt="" fill sizes="100vw" className="object-cover object-center opacity-35" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#14120f]/90 via-[#14120f]/70 to-[#14120f]/50" />
+      <Container className="relative">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -51,15 +52,6 @@ export function Needs() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-5 border-t border-white/10 pt-9 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-2xl text-sm leading-7 text-white/60">
-            Contanos tu situación. Analizamos el problema y te proponemos una página, sistema o automatización adaptada a tu forma de trabajar.
-          </p>
-          <Link href="/agendar" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-[#f4eee7] px-7 py-4 text-sm font-semibold text-foreground hover:opacity-100">
-            Agendar una reunión
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
       </Container>
     </section>
   );

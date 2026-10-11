@@ -30,7 +30,7 @@ export function ThemeToggle() {
       aria-label={
         theme === "dark" ? "Activar modo claro" : "Activar modo oscuro"
       }
-      className="flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition duration-300 hover:border-accent hover:bg-accent hover:text-accent-foreground"
+      className="flex h-11 w-11 items-center justify-center rounded-full border border-current/25 text-current transition duration-300 hover:border-accent hover:bg-accent hover:text-accent-foreground"
     >
       {theme === "dark" ? (
         <Sun className="h-[18px] w-[18px]" />

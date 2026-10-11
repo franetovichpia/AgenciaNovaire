@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -10,18 +10,37 @@ import { navigation } from "@/data/site";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 40);
+    }
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const solid = scrolled || isOpen;
 
   function closeMenu() {
     setIsOpen(false);
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-xl">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        solid
+          ? "border-border/60 bg-background/85 text-foreground backdrop-blur-xl"
+          : "border-white/15 bg-transparent text-white"
+      }`}
+    >
       <Container>
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-semibold tracking-[-0.05em] text-foreground"
+            className="text-2xl font-semibold tracking-[-0.05em]"
             onClick={closeMenu}
           >
             Novaire
@@ -33,7 +52,11 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className={`text-sm font-medium transition-colors ${
+                  solid
+                    ? "text-muted-foreground hover:text-foreground"
+                    : "text-white/80 hover:text-white"
+                }`}
               >
                 {item.name}
               </Link>
@@ -59,7 +82,7 @@ export function Header() {
               aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
               aria-expanded={isOpen}
               onClick={() => setIsOpen((current) => !current)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-border"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-current/25"
             >
               {isOpen ? (
                 <X className="h-5 w-5" />

@@ -6,9 +6,9 @@ import { navigation, siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="bg-[#181614] py-14 text-white">
+    <footer className="bg-[#181614] py-12 text-white">
       <Container>
-        <div className="grid gap-14 border-b border-white/15 pb-14 lg:grid-cols-[1.3fr_0.7fr]">
+        <div className="grid gap-10 border-b border-white/15 pb-10 lg:grid-cols-[1.3fr_0.7fr]">
           <div>
             <Link
               href="/"
