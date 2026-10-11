@@ -10,10 +10,10 @@ import { ProjectModal } from "@/components/projects/project-modal";
 import { projects as allProjects, type Project } from "@/data/site";
 
 const FEATURED_SLUGS = [
-  "arqstudio",
-  "nucleo-pilates",
-  "la-piccola",
-  "pipi-balloons",
+  "bim-3d-5d",
+  "landing-arquitecta",
+  "portal-comunicativo",
+  "norte-logistica",
 ];
 
 const projects = FEATURED_SLUGS.flatMap((slug) =>
