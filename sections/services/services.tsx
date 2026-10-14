@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import {
-  ArrowLeft,
-  ArrowRight,
+  Plus,
   Code2,
   LayoutDashboard,
   Palette,
@@ -22,9 +22,6 @@ type Service = {
   description: string;
   icon: LucideIcon;
   features: string[];
-  background: string;
-  foreground: string;
-  muted: string;
 };
 
 const services: Service[] = [
@@ -40,9 +37,6 @@ const services: Service[] = [
       "Botón de WhatsApp",
       "Formulario de contacto",
     ],
-    background: "bg-[#1b1816]",
-    foreground: "text-white",
-    muted: "text-white/55",
   },
   {
     number: "02",
@@ -56,9 +50,6 @@ const services: Service[] = [
       "Reportes y métricas",
       "Tareas automáticas",
     ],
-    background: "bg-[#d77a3b]",
-    foreground: "text-white",
-    muted: "text-white/70",
   },
   {
     number: "03",
@@ -67,9 +58,6 @@ const services: Service[] = [
       "Tu tienda online lista para vender: catálogo de productos, carrito de compras, cobros integrados y un panel simple para administrar pedidos y stock.",
     icon: ShoppingBag,
     features: ["Catálogo de productos", "Carrito y checkout", "Medios de pago", "Panel de administración"],
-    background: "bg-[#ead8c7]",
-    foreground: "text-[#1b1816]",
-    muted: "text-[#1b1816]/60",
   },
   {
     number: "04",
@@ -78,9 +66,6 @@ const services: Service[] = [
       "Una app para Android o instalable como PWA, conectada a la nube, con notificaciones y funciones a medida de tu negocio, sin depender de una tienda de aplicaciones.",
     icon: Smartphone,
     features: ["App para Android", "Instalable como PWA", "Notificaciones push", "Datos en la nube"],
-    background: "bg-[#f8f3ed]",
-    foreground: "text-[#1b1816]",
-    muted: "text-[#756b63]",
   },
   {
     number: "05",
@@ -89,9 +74,6 @@ const services: Service[] = [
       "Definimos cómo se ve y se siente tu marca en digital: pantallas, flujos de uso y una identidad visual coherente antes de escribir una línea de código.",
     icon: Palette,
     features: ["Interfaces UI/UX", "Wireframes", "Prototipos interactivos", "Identidad de marca"],
-    background: "bg-[#b9a493]",
-    foreground: "text-white",
-    muted: "text-white/65",
   },
   {
     number: "06",
@@ -100,148 +82,123 @@ const services: Service[] = [
       "Conectamos tus herramientas para que las tareas repetitivas se hagan solas: avisos, mails, carga de datos y procesos que hoy hacés a mano.",
     icon: Workflow,
     features: ["Envío de emails", "Alertas automáticas", "Formularios conectados", "Procesos internos"],
-    background: "bg-[#27221f]",
-    foreground: "text-white",
-    muted: "text-white/55",
   },
 ];
 
 export function Services() {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  function scroll(direction: "left" | "right") {
-    const container = scrollContainerRef.current;
-
-    if (!container) {
-      return;
-    }
-
-    const distance = container.clientWidth * 0.55;
-    
-
-    container.scrollBy({
-      left: direction === "right" ? distance : -distance,
-      behavior: "smooth",
-    });
-  }
+  const [active, setActive] = useState(0);
 
   return (
     <section
       id="services"
-      className="overflow-hidden bg-secondary/35 py-16 sm:py-24"
+      className="relative overflow-hidden bg-[#16231b] py-16 text-[#f3efe8] sm:py-24"
     >
       <Container>
-        <div className="max-w-3xl">
-          <span className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
-            Nuestros servicios
-          </span>
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <div className="lg:sticky lg:top-28 lg:self-start">
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+              Nuestros servicios
+            </span>
 
-          <h2 className="mt-5 font-display text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-4xl lg:text-5xl">
-            Soluciones digitales que se adaptan a cada etapa de un negocio.
-          </h2>
+            <h2 className="mt-5 font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+              Soluciones digitales para cada etapa de{" "}
+              <span className="italic text-accent">un negocio.</span>
+            </h2>
 
-          <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-            Diseñamos y desarrollamos productos pensados para comunicar,
-            vender, organizar y simplificar procesos.
-          </p>
-        </div>
-      </Container>
+            <p className="mt-5 max-w-md text-base leading-8 text-white/65">
+              Diseñamos y desarrollamos productos pensados para comunicar,
+              vender, organizar y simplificar procesos.
+            </p>
 
-      <div className="relative mt-10">
-        <button
-          type="button"
-          onClick={() => scroll("left")}
-          aria-label="Ver servicios anteriores"
-          className="absolute left-3 top-1/2 z-20 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/90 text-foreground shadow-lg backdrop-blur-md transition duration-300 hover:scale-105 hover:border-primary hover:bg-primary hover:text-primary-foreground md:flex lg:left-8"
-        >
-          <ArrowLeft className="h-5 w-5" />
-        </button>
+            <div className="relative mt-8 hidden aspect-[16/10] overflow-hidden rounded-[1.75rem] lg:block">
+              <Image
+                src="/brand/hojas.jpg"
+                alt=""
+                fill
+                sizes="32vw"
+                className="object-cover object-[50%_30%]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#16231b]/70 to-transparent" />
+            </div>
+          </div>
 
-        <button
-          type="button"
-          onClick={() => scroll("right")}
-          aria-label="Ver siguientes servicios"
-          className="absolute right-3 top-1/2 z-20 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/90 text-foreground shadow-lg backdrop-blur-md transition duration-300 hover:scale-105 hover:border-primary hover:bg-primary hover:text-primary-foreground md:flex lg:right-8"
-        >
-          <ArrowRight className="h-5 w-5" />
-        </button>
+          <div className="border-t border-white/15">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              const isOpen = active === index;
 
-        <div
-          ref={scrollContainerRef}
-          className="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-6 pb-5 sm:px-8 md:px-20 lg:px-[max(6rem,calc((100vw-72rem)/2))]"
-        >
-          {services.map((service, index) => {
-            const Icon = service.icon;
-
-            return (
-              <motion.article
-                key={service.title}
-                initial={{ opacity: 0, x: 90 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut",
-                  delay: index * 0.08,
-                }}
-                whileHover={{ y: -6 }}
-                className={`group relative flex min-h-[430px] w-[78vw] max-w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-[2rem] p-7 shadow-xl shadow-black/5 ring-1 ring-current/10 transition-shadow duration-300 hover:shadow-2xl sm:w-[350px] ${service.background} ${service.foreground}`}
-              >
-                <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-current opacity-[0.07] blur-2xl transition-transform duration-500 group-hover:scale-110" />
-
-                <div>
-                  <div className="flex items-start justify-between">
+              return (
+                <div key={service.title} className="border-b border-white/15">
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => setActive(index)}
+                    onMouseEnter={() => setActive(index)}
+                    className="group flex w-full items-center gap-5 py-6 text-left sm:gap-8"
+                  >
                     <span
-                      className={`text-xs font-semibold uppercase tracking-[0.18em] ${service.muted}`}
+                      className={`w-8 text-sm transition-colors ${
+                        isOpen ? "text-accent" : "text-white/40"
+                      }`}
                     >
-                      Servicio {service.number}
+                      {service.number}
                     </span>
 
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-current/10 backdrop-blur">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                  </div>
+                    <h3
+                      className={`flex-1 font-display text-2xl font-medium tracking-[-0.03em] transition-colors sm:text-3xl ${
+                        isOpen ? "text-white" : "text-white/55 group-hover:text-white/80"
+                      }`}
+                    >
+                      {service.title}
+                    </h3>
 
-                  <h3 className="mt-12 max-w-[280px] font-display text-2xl font-medium leading-none tracking-[-0.05em] sm:text-3xl">
-                    {service.title}
-                  </h3>
+                    <span
+                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition ${
+                        isOpen
+                          ? "border-accent bg-accent text-[#16231b]"
+                          : "border-white/25 text-white/60"
+                      }`}
+                    >
+                      {isOpen ? (
+                        <Icon className="h-4 w-4" />
+                      ) : (
+                        <Plus className="h-4 w-4" />
+                      )}
+                    </span>
+                  </button>
 
-                  <p className={`mt-6 text-sm leading-7 ${service.muted}`}>
-                    {service.description}
-                  </p>
-                </div>
-
-                <div>
-                  <div className="mb-6 h-px w-full bg-current opacity-10" />
-
-                  <div className="flex flex-wrap gap-2">
-                    {service.features.map((feature) => (
-                      <span
-                        key={feature}
-                        className="rounded-full bg-current/[0.08] px-3 py-1.5 text-xs font-medium"
+                  <AnimatePresence initial={false}>
+                    {isOpen ? (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="overflow-hidden"
                       >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
+                        <div className="pb-7 pl-[3.25rem] sm:pl-[4rem]">
+                          <p className="max-w-xl text-sm leading-7 text-white/70 sm:text-base">
+                            {service.description}
+                          </p>
+
+                          <div className="mt-5 flex flex-wrap gap-2">
+                            {service.features.map((feature) => (
+                              <span
+                                key={feature}
+                                className="rounded-full border border-accent/40 px-3.5 py-1.5 text-xs font-medium text-accent"
+                              >
+                                {feature}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
                 </div>
-              </motion.article>
-            );
-          })}
-
-          <div className="w-2 shrink-0 sm:w-8" aria-hidden="true" />
-        </div>
-      </div>
-
-      <Container>
-        <div className="mt-2 flex items-center gap-4">
-          <span className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-            Deslizá o usá las flechas
-          </span>
-
-          <div className="h-px flex-1 bg-border" />
-
-          <ArrowRight className="h-4 w-4 text-primary" />
+              );
+            })}
+          </div>
         </div>
       </Container>
     </section>
