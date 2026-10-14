@@ -128,7 +128,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="overflow-hidden bg-secondary/35 py-28 sm:py-32"
+      className="overflow-hidden bg-secondary/35 py-16 sm:py-24"
     >
       <Container>
         <div className="max-w-3xl">
@@ -147,7 +147,7 @@ export function Services() {
         </div>
       </Container>
 
-      <div className="relative mt-16">
+      <div className="relative mt-10">
         <button
           type="button"
           onClick={() => scroll("left")}

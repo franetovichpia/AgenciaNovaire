@@ -42,7 +42,7 @@ export function Projects() {
   }
 
   return (
-    <section id="projects" className="py-24 sm:py-28">
+    <section id="projects" className="py-16 sm:py-20">
       <Container>
         <div className="relative overflow-hidden rounded-[2.5rem]">
           <AnimatePresence mode="sync">
@@ -69,7 +69,7 @@ export function Projects() {
 
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/35 to-black/50" />
 
-          <div className="relative flex flex-col items-center px-6 pb-20 pt-14 text-center sm:pt-20">
+          <div className="relative flex flex-col items-center px-6 pb-14 pt-12 text-center sm:pt-16">
             <span className="rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white/85 backdrop-blur-md">
               Proyectos
             </span>
@@ -110,7 +110,7 @@ export function Projects() {
               </a>
             </div>
 
-            <div className="relative mt-14 flex h-[300px] w-full max-w-3xl items-center justify-center">
+            <div className="relative mt-10 flex h-[300px] w-full max-w-3xl items-center justify-center">
               <button
                 type="button"
                 aria-label="Proyecto anterior"

@@ -36,9 +36,9 @@ const questions = [
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-secondary/40 py-28 sm:py-32">
+    <section id="faq" className="bg-secondary/40 py-16 sm:py-24">
       <Container>
-        <div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
+        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <SectionHeading
             eyebrow="Preguntas frecuentes"
             title="Información clara antes de comenzar."

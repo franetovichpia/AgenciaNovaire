@@ -1,88 +1,82 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-background pt-28">
-      <div className="absolute inset-0 -z-20 bg-background" />
+    <section className="relative flex min-h-[100svh] items-end overflow-hidden bg-[#14120f] text-white">
+      <Image
+        src="/brand/ambiente.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[70%_65%]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-transparent" />
 
-      <div className="absolute left-1/2 top-[18%] -z-10 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[#d98945]/18 blur-[140px]" />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-6 top-24 select-none font-display text-[22vw] italic leading-none tracking-[-0.06em] text-white/10 sm:right-12 sm:text-[14vw]"
+      >
+        Novaire.
+      </span>
 
-      <div className="absolute -left-20 bottom-16 -z-10 h-72 w-72 rounded-full bg-[#f1c89d]/25 blur-[110px]" />
+      <Container className="relative pb-14 pt-32 sm:pb-20">
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-xs font-medium uppercase tracking-[0.3em] text-white/75"
+        >
+          Estudio digital · Sitios web para profesionales
+        </motion.p>
 
-      <Container className="flex min-h-[calc(100vh-7rem)] flex-col justify-between gap-16 pb-14">
-        <div className="pt-8">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-sm font-medium uppercase tracking-[0.3em] text-muted-foreground"
+        <motion.h1
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mt-5 max-w-3xl font-display text-5xl font-medium leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
+        >
+          Si sos profesional y no tenés web,{" "}
+          <span className="italic text-accent">
+            estás perdiendo clientes.
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="mt-6 max-w-xl text-base leading-8 text-white/75 sm:text-lg"
+        >
+          Te armamos una web que vende y agenda por vos, incluso cuando no
+          estás conectado.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-9 max-w-md"
+        >
+          <Link
+            href="/agendar"
+            className="flex items-center justify-between gap-6 border-b border-white/50 pb-4 text-base font-medium transition hover:border-white"
           >
-            Sitios web para profesionales y negocios
-          </motion.p>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-5 font-display text-[15vw] font-semibold leading-[0.82] tracking-[-0.085em] text-foreground sm:text-[12vw] lg:text-[9.5vw]"
-          >
-            NOVAIRE
-          </motion.h1>
-        </div>
-
-        <div className="grid gap-10 pb-4 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
-            <h2 className="max-w-4xl font-display text-3xl font-medium leading-tight tracking-[-0.04em] text-foreground sm:text-4xl lg:text-5xl">
-              Si sos profesional y no tenés página web,{" "}
-              <span className="text-primary">
-                estás perdiendo clientes todos los días.
-              </span>
-            </h2>
-
-            <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-              Mientras tu competencia aparece primero en Google y agenda
-              turnos sola, vos seguís contestando lo mismo por WhatsApp una y
-              otra vez. Te armamos una web que vende y agenda por vos, incluso
-              cuando no estás conectado.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="flex flex-col gap-4 lg:items-end"
-          >
-            <Link
-              href="/agendar"
-              className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition duration-300 hover:-translate-y-0.5 hover:bg-[#b9642f]"
-            >
-              Agendar una reunión gratis
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-
-            <Link
-              href="#projects"
-              className="inline-flex w-fit items-center justify-center rounded-full border border-border bg-background/70 px-7 py-4 text-sm font-semibold text-foreground transition hover:bg-secondary"
-            >
-              Ver proyectos
-            </Link>
-
-            <p className="text-xs text-muted-foreground lg:text-right">
-              Sin costo · 30 minutos · Sin compromiso
-            </p>
-          </motion.div>
-        </div>
+            Agendar una reunión gratis
+            <ArrowUpRight className="h-5 w-5" />
+          </Link>
+          <p className="mt-3 text-xs text-white/55">
+            Sin costo · 30 minutos · Sin compromiso
+          </p>
+        </motion.div>
       </Container>
     </section>
   );

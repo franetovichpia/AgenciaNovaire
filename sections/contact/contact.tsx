@@ -25,11 +25,9 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28 sm:py-32">
-      <div className="absolute right-0 top-0 -z-10 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[140px]" />
-
+    <section id="contact" className="relative overflow-hidden py-16 sm:py-24">
       <Container>
-        <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
               Contacto
