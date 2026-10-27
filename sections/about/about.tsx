@@ -63,7 +63,7 @@ export function About() {
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col justify-center"
           >
             <h2 className="font-display text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-3xl lg:text-4xl">
