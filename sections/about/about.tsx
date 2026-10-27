@@ -34,7 +34,7 @@ export function About() {
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
               Sobre Novaire
