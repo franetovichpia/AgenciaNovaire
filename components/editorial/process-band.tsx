@@ -5,7 +5,7 @@ type Step = { title: string; text: string };
 
 export function ProcessBand({ steps }: { steps: Step[] }) {
   return (
-    <section className="bg-[#0f1511] text-[#f3efe8]">
+    <section className="bg-[#0a0a0a] text-[#f3efe8]">
       <Container>
         <div className="flex items-stretch gap-6 sm:gap-10">
           <div className="flex-1 divide-y divide-white/15 py-14 sm:py-24">
@@ -31,7 +31,7 @@ export function ProcessBand({ steps }: { steps: Step[] }) {
           <Reveal direction="right" className="shrink-0 self-center">
             <span
               aria-hidden="true"
-              className="font-impact vertical-word block text-[4.5rem] leading-none text-accent sm:text-[8rem]"
+              className="font-impact vertical-word block text-[3.25rem] leading-none text-accent sm:text-[5rem]"
             >
               Proceso
             </span>

@@ -2,7 +2,7 @@ import { Container } from "@/components/common/container";
 import { Reveal } from "@/components/common/reveal";
 import { SectionHeading } from "@/components/common/section-heading";
 
-const questions = [
+export const questions = [
   {
     question: "¿Cuánto tarda un proyecto?",
     answer:

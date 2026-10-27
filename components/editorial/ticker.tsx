@@ -13,7 +13,7 @@ export function Ticker() {
   return (
     <div
       aria-hidden="true"
-      className="overflow-hidden border-y border-black/20 bg-accent py-3 text-[#16231b]"
+      className="overflow-hidden border-y border-black bg-[#f2f0ea] py-3 text-[#0a0a0a]"
     >
       <div className="ticker-track flex w-max whitespace-nowrap">
         {[0, 1].map((copy) => (
@@ -21,10 +21,10 @@ export function Ticker() {
             {row.map((item, index) => (
               <span
                 key={`${copy}-${index}`}
-                className="font-impact flex items-center text-lg sm:text-xl"
+                className="font-impact flex items-center text-sm sm:text-base"
               >
                 {item}
-                <span className="mx-6 inline-block h-1.5 w-1.5 rounded-full bg-[#16231b]" />
+                <span className="mx-6 inline-block h-1.5 w-1.5 rounded-full bg-[#0a0a0a]" />
               </span>
             ))}
           </div>

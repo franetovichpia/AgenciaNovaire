@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { niches } from "@/data/niches";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -8,8 +10,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
-    ...["arquitectos", "inmobiliarias", "turismo"].map((rubro) => ({
-      url: `https://www.studionovaire.com/web-para-${rubro}`,
+    {
+      url: "https://www.studionovaire.com/agendar",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    ...niches.map((niche) => ({
+      url: `https://www.studionovaire.com${niche.path}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,

@@ -2,29 +2,29 @@
 
 :root {
   /* ===========================
-      COLORES
+      COLORES (monocromo)
   =========================== */
 
-  --background: #faf8f5;
-  --foreground: #1f1f1f;
+  --background: #f2f0ea;
+  --foreground: #0a0a0a;
 
-  --card: #ffffff;
-  --card-foreground: #1f1f1f;
+  --card: #f8f6f1;
+  --card-foreground: #0a0a0a;
 
-  --primary: #9b8a76;
-  --primary-foreground: #ffffff;
+  --primary: #0a0a0a;
+  --primary-foreground: #f2f0ea;
 
-  --secondary: #f2ede6;
-  --secondary-foreground: #1f1f1f;
+  --secondary: #e8e5dd;
+  --secondary-foreground: #0a0a0a;
 
-  --muted: #f6f2ec;
-  --muted-foreground: #6e6a66;
+  --muted: #ebe8e0;
+  --muted-foreground: #5c5a55;
 
-  --border: #e6dfd6;
-  --ring: #b6a48d;
+  --border: #d6d2c8;
+  --ring: #0a0a0a;
 
-  --accent: #fff1b5;
-  --accent-foreground: #3a3120;
+  --accent: #f2f0ea;
+  --accent-foreground: #0a0a0a;
 
   /* ===========================
       TIPOGRAFÍA
@@ -32,6 +32,7 @@
 
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
   --font-evolve: var(--font-evolve);
 
   /* ===========================
@@ -44,26 +45,26 @@
 }
 
 :root[data-theme="dark"] {
-  --background: #14120f;
-  --foreground: #f3efe8;
+  --background: #0a0a0a;
+  --foreground: #f2f0ea;
 
-  --card: #1c1915;
-  --card-foreground: #f3efe8;
+  --card: #141414;
+  --card-foreground: #f2f0ea;
 
-  --primary: #c2ac8e;
-  --primary-foreground: #171310;
+  --primary: #f2f0ea;
+  --primary-foreground: #0a0a0a;
 
-  --secondary: #26221c;
-  --secondary-foreground: #ece5da;
+  --secondary: #181818;
+  --secondary-foreground: #f2f0ea;
 
-  --muted: #201c17;
-  --muted-foreground: #a89c8c;
+  --muted: #121212;
+  --muted-foreground: #a8a59e;
 
-  --border: #322c24;
-  --ring: #c2ac8e;
+  --border: #2a2a2a;
+  --ring: #f2f0ea;
 
-  --accent: #fff1b5;
-  --accent-foreground: #2a2410;
+  --accent: #f2f0ea;
+  --accent-foreground: #0a0a0a;
 
   color-scheme: dark;
 }
@@ -94,6 +95,7 @@
 
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
   --font-evolve: var(--font-evolve);
 }
 
@@ -145,7 +147,36 @@ h5,
 h6,
 .font-display {
   font-family: var(--font-display);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
+}
+
+h1,
+h2,
+.font-display {
+  font-weight: 800;
+  font-stretch: 112%;
+  text-transform: uppercase;
+  line-height: 1.04;
+}
+
+/* Acento en serif cursiva dentro de los títulos */
+.font-display .italic,
+.font-display em,
+h1 .italic,
+h2 .italic {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+  text-transform: none;
+  letter-spacing: -0.01em;
+}
+
+.font-serif-italic {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
 }
 
 p {
@@ -309,8 +340,10 @@ select {
 =========================== */
 
 .font-impact {
-  font-family: var(--font-impact), Impact, sans-serif;
-  letter-spacing: 0.01em;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 112%;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
 }
 

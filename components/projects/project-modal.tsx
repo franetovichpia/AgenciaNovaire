@@ -118,8 +118,8 @@ function ModalContent({
           ) : (
             <div className="flex h-full w-full items-center justify-center">
               <span
-                className="font-evolve text-3xl tracking-[-0.02em] sm:text-4xl"
-                style={{ color: "#fff1b5" }}
+                className="font-evolve text-3xl tracking-[-0.02em] sm:text-3xl"
+                style={{ color: "#f2f0ea" }}
               >
                 Capturas próximamente
               </span>

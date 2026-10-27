@@ -7,15 +7,15 @@ import { navigation, siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="bg-[#181614] py-12 text-white">
+    <footer className="bg-[#0a0a0a] py-12 text-white">
       <Container>
         <div className="grid gap-10 border-b border-white/15 pb-10 lg:grid-cols-[1.3fr_0.7fr]">
           <div>
             <Link
               href="/"
-              className="font-display text-5xl font-medium tracking-[-0.06em] text-white sm:text-6xl"
+              className="font-display text-4xl text-white sm:text-5xl"
             >
-              Novaire<span style={{ color: "#fff1b5" }}>.</span>
+              Novaire <span className="italic">studio</span>
             </Link>
 
             <p className="mt-6 max-w-lg text-sm leading-7 text-white/50">

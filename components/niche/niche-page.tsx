@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/common/container";
+import { HeroBackdrop } from "@/components/common/hero-backdrop";
+import { JsonLd } from "@/components/common/json-ld";
 import { Reveal } from "@/components/common/reveal";
 import { ProcessBand } from "@/components/editorial/process-band";
 import { Ticker } from "@/components/editorial/ticker";
@@ -10,6 +12,7 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { niches, type Niche } from "@/data/niches";
 import { projects, siteConfig } from "@/data/site";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/seo";
 
 export function NichePage({ niche }: { niche: Niche }) {
   const examples = niche.exampleSlugs.flatMap((slug) =>
@@ -22,31 +25,35 @@ export function NichePage({ niche }: { niche: Niche }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: niche.seoTitle,
+            description: niche.seoDescription,
+            path: niche.path,
+          }),
+          faqSchema(niche.faq),
+          breadcrumbSchema([
+            { name: "Inicio", path: "/" },
+            { name: niche.seoTitle, path: niche.path },
+          ]),
+        ]}
+      />
       <Header />
 
       <main>
-        <section className="relative flex min-h-[78svh] items-end overflow-hidden bg-[#14120f] text-white">
-          <Image
-            src={niche.image}
-            alt=""
-            fill
-            priority
-            quality={90}
-            sizes="100vw"
-            className="object-cover"
-            style={{ objectPosition: niche.imagePosition }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-transparent" />
+        <section className="relative flex min-h-[72svh] items-end overflow-hidden bg-[#0a0a0a] text-white">
+          <HeroBackdrop />
+          <div className="absolute inset-x-0 top-24 border-t border-white/15" />
 
           <Container className="relative pb-14 pt-32 sm:pb-20">
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-white/75">
+            <p className="font-serif-italic text-xl text-white/80 sm:text-2xl">
               {niche.eyebrow}
             </p>
 
-            <h1 className="mt-5 max-w-3xl font-display text-4xl font-medium leading-[1.05] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-3xl font-display text-3xl sm:text-5xl lg:text-6xl">
               {niche.title}{" "}
-              <span className="italic text-accent">{niche.accent}</span>
+              <span className="italic">{niche.accent}</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-8 text-white/75 sm:text-lg">
@@ -70,20 +77,20 @@ export function NichePage({ niche }: { niche: Niche }) {
 
         <Ticker />
 
-        <section className="bg-[#16231b] py-12 text-[#f3efe8] sm:py-16">
+        <section className="bg-[#0a0a0a] py-12 text-[#f3efe8] sm:py-16">
           <Container>
             <div className="flex items-start gap-6 sm:gap-10">
               <Reveal direction="left">
                 <span
                   aria-hidden="true"
-                  className="font-impact vertical-word block shrink-0 text-[4.5rem] leading-none text-accent sm:text-[8rem]"
+                  className="font-impact vertical-word block shrink-0 text-[3.25rem] leading-none text-accent sm:text-[5rem]"
                 >
                   Incluye
                 </span>
               </Reveal>
 
               <Reveal direction="right" className="flex-1">
-                <h2 className="max-w-2xl font-display text-2xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-4xl">
+                <h2 className="max-w-2xl font-display text-2xl font-medium leading-[1.1] tracking-[-0.03em] sm:text-3xl">
                   {niche.includesTitle}
                 </h2>
 
@@ -118,7 +125,7 @@ export function NichePage({ niche }: { niche: Niche }) {
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                 Trabajos reales
               </span>
-              <h2 className="mt-5 max-w-2xl font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+              <h2 className="mt-5 max-w-2xl font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-3xl lg:text-4xl">
                 Proyectos que ya desarrollamos.
               </h2>
 
@@ -162,7 +169,7 @@ export function NichePage({ niche }: { niche: Niche }) {
                   <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                     {showcase.eyebrow}
                   </span>
-                  <h2 className="mt-4 font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl">
+                  <h2 className="mt-4 font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-3xl">
                     {showcase.title}
                   </h2>
                 </Reveal>
@@ -173,7 +180,93 @@ export function NichePage({ niche }: { niche: Niche }) {
                 </Reveal>
               </div>
 
-              {showcase.layout === "duo" ? (
+              {showcase.layout === "single" ? (
+                <Reveal className="mt-14">
+                  <div
+                    className="relative mx-auto max-w-2xl overflow-hidden rounded-[2rem] shadow-2xl shadow-black/15 ring-1 ring-black/5"
+                    style={{ aspectRatio: showcase.ratio ?? "4 / 5" }}
+                  >
+                    <Image
+                      src={showcase.images[0].src}
+                      alt={showcase.images[0].alt}
+                      fill
+                      quality={95}
+                      sizes="(min-width:768px) 672px, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                </Reveal>
+              ) : showcase.layout === "wide" ? (
+                <div className="mt-14 space-y-6 sm:space-y-8">
+                  {showcase.images.map((image, index) => (
+                    <Reveal key={image.src} delay={index * 0.1}>
+                      <div className="relative aspect-[1892/870] overflow-hidden rounded-[1.5rem] shadow-2xl shadow-black/15 ring-1 ring-black/5 sm:rounded-[2rem]">
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          quality={95}
+                          sizes="(min-width:1280px) 1200px, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              ) : showcase.layout === "gallery" ? (
+                <div className="mt-14 grid gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12">
+                  {showcase.images.map((image, index) => (
+                    <Reveal key={image.src} delay={(index % 2) * 0.12}>
+                      <figure>
+                        <div className="relative aspect-[1100/865] overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/15 ring-1 ring-black/5 sm:rounded-[2rem]">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            quality={95}
+                            sizes="(min-width:1280px) 580px, (min-width:640px) 50vw, 100vw"
+                            className="object-cover"
+                          />
+                        </div>
+                        {image.caption ? (
+                          <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                            {String(index + 1).padStart(2, "0")} —{" "}
+                            {image.caption}
+                          </figcaption>
+                        ) : null}
+                      </figure>
+                    </Reveal>
+                  ))}
+                </div>
+              ) : showcase.layout === "steps" ? (
+                <div className="mt-14 grid gap-8 md:grid-cols-3">
+                  {showcase.images.map((image, index) => (
+                    <Reveal key={image.src} delay={index * 0.12}>
+                      <figure>
+                        <div
+                          className="relative overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/15 ring-1 ring-black/5"
+                          style={{ aspectRatio: showcase.ratio ?? "941 / 861" }}
+                        >
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            quality={95}
+                            sizes="(min-width:768px) 380px, 100vw"
+                            className="object-cover"
+                          />
+                        </div>
+                        {image.caption ? (
+                          <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                            {String(index + 1).padStart(2, "0")} —{" "}
+                            {image.caption}
+                          </figcaption>
+                        ) : null}
+                      </figure>
+                    </Reveal>
+                  ))}
+                </div>
+              ) : showcase.layout === "duo" ? (
                 <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-8">
                   {showcase.images.map((image, index) => (
                     <Reveal key={image.src} delay={index * 0.12}>
@@ -201,7 +294,7 @@ export function NichePage({ niche }: { niche: Niche }) {
                     >
                       <Reveal delay={index * 0.1}>
                         <figure>
-                          <div className="relative aspect-[9/17] overflow-hidden rounded-[2.25rem] border-[6px] border-[#16231b] bg-[#16231b] shadow-2xl shadow-black/20">
+                          <div className="relative aspect-[9/17] overflow-hidden rounded-[2.25rem] border-[6px] border-[#0a0a0a] bg-[#0a0a0a] shadow-2xl shadow-black/20">
                             <Image
                               src={image.src}
                               alt={image.alt}
@@ -233,7 +326,7 @@ export function NichePage({ niche }: { niche: Niche }) {
           <Container>
             <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
               <Reveal direction="left">
-                <h2 className="font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl">
+                <h2 className="font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-3xl">
                   Preguntas frecuentes
                 </h2>
               </Reveal>
@@ -260,11 +353,11 @@ export function NichePage({ niche }: { niche: Niche }) {
           </Container>
         </section>
 
-        <section className="bg-[#16231b] py-12 text-[#f3efe8] sm:py-16">
+        <section className="bg-[#0a0a0a] py-12 text-[#f3efe8] sm:py-16">
           <Container>
             <Reveal className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <h2 className="max-w-2xl font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+                <h2 className="max-w-2xl font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-3xl lg:text-4xl">
                   Hablemos de tu{" "}
                   <span className="italic text-accent">proyecto.</span>
                 </h2>
@@ -276,7 +369,7 @@ export function NichePage({ niche }: { niche: Niche }) {
               <div className="flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/agendar"
-                  className="rounded-full bg-accent px-7 py-4 text-center text-sm font-semibold text-[#16231b]"
+                  className="rounded-full bg-accent px-7 py-4 text-center text-sm font-semibold text-[#0a0a0a]"
                 >
                   Agendar una reunión
                 </Link>

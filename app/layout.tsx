@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {
-  Anton,
+  Archivo,
   Playfair_Display,
   Manrope,
   Space_Grotesk,
@@ -8,22 +8,27 @@ import {
 
 import "./globals.css";
 
+import { JsonLd } from "@/components/common/json-ld";
+import { organizationSchema, websiteSchema } from "@/lib/seo";
+
 // Tipografías
+// Serif cursiva para los acentos y el logotipo
 const playfair = Playfair_Display({
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+});
+
+// Grotesca ancha en mayúsculas para títulos
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
   variable: "--font-display",
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-
-// Tipografía condensada para títulos verticales y bandas editoriales
-const impact = Anton({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-impact",
 });
 
 const evolveSans = Space_Grotesk({
@@ -89,6 +94,14 @@ export const metadata: Metadata = {
     title: "Novaire Studio | Diseño Web y Soluciones Digitales",
     description:
       "Sitios web para profesionales y empresas, e-commerce, sistemas de gestión y automatizaciones.",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Novaire Studio — Diseño web para profesionales y empresas",
+      },
+    ],
   },
 
   twitter: {
@@ -96,6 +109,7 @@ export const metadata: Metadata = {
     title: "Novaire Studio | Diseño Web y Soluciones Digitales",
     description:
       "Soluciones digitales a medida para profesionales, empresas y emprendimientos.",
+    images: ["/og.jpg"],
   },
 };
 
@@ -113,6 +127,7 @@ export default function RootLayout({
             __html: themeScript,
           }}
         />
+        <JsonLd data={[organizationSchema, websiteSchema]} />
       </head>
 
       <body
@@ -120,7 +135,7 @@ export default function RootLayout({
           ${playfair.variable}
           ${manrope.variable}
           ${evolveSans.variable}
-          ${impact.variable}
+          ${archivo.variable}
           antialiased
         `}
       >
