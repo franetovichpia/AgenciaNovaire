@@ -2,7 +2,7 @@ export type Showcase = {
   eyebrow: string;
   title: string;
   text: string;
-  layout: "duo" | "phones" | "single" | "wide" | "steps";
+  layout: "duo" | "phones" | "single" | "wide" | "steps" | "gallery";
   images: { src: string; alt: string; caption?: string }[];
 };
 
@@ -265,6 +265,36 @@ export const niches: Niche[] = [
       },
     ],
     exampleSlugs: [],
+    showcases: [
+      {
+        eyebrow: "Demo · Agencia de viajes",
+        title: "Destinos que inspiran y un camino directo para consultar.",
+        text: "Así puede verse tu agencia: un inicio con imágenes que invitan a viajar, destinos y propuestas con su detalle, y la conversación por WhatsApp siempre a mano.",
+        layout: "gallery",
+        images: [
+          {
+            src: "/projects/turismo-demo/inicio.jpg",
+            alt: "Inicio de la web de una agencia de viajes con una playa caribeña y un avión",
+            caption: "Un inicio que invita a viajar",
+          },
+          {
+            src: "/projects/turismo-demo/destinos.jpg",
+            alt: "Buscador de destinos y tarjetas de Caribe, Brasil y Europa",
+            caption: "Buscador y destinos",
+          },
+          {
+            src: "/projects/turismo-demo/propuesta.jpg",
+            alt: "Detalle de una propuesta de viaje al Caribe con botón para consultar",
+            caption: "Cada propuesta, en detalle",
+          },
+          {
+            src: "/projects/turismo-demo/contacto.jpg",
+            alt: "Sección de contacto por WhatsApp de una agencia de viajes",
+            caption: "Contacto por WhatsApp",
+          },
+        ],
+      },
+    ],
     steps,
     faq: [
       {

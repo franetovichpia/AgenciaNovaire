@@ -203,6 +203,31 @@ export function NichePage({ niche }: { niche: Niche }) {
                     </Reveal>
                   ))}
                 </div>
+              ) : showcase.layout === "gallery" ? (
+                <div className="mt-14 grid gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12">
+                  {showcase.images.map((image, index) => (
+                    <Reveal key={image.src} delay={(index % 2) * 0.12}>
+                      <figure>
+                        <div className="relative aspect-[1100/865] overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/15 ring-1 ring-black/5 sm:rounded-[2rem]">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            quality={95}
+                            sizes="(min-width:1280px) 580px, (min-width:640px) 50vw, 100vw"
+                            className="object-cover"
+                          />
+                        </div>
+                        {image.caption ? (
+                          <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                            {String(index + 1).padStart(2, "0")} —{" "}
+                            {image.caption}
+                          </figcaption>
+                        ) : null}
+                      </figure>
+                    </Reveal>
+                  ))}
+                </div>
               ) : showcase.layout === "steps" ? (
                 <div className="mt-14 grid gap-8 md:grid-cols-3">
                   {showcase.images.map((image, index) => (
