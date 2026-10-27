@@ -2,7 +2,7 @@ export type Showcase = {
   eyebrow: string;
   title: string;
   text: string;
-  layout: "duo" | "phones";
+  layout: "duo" | "phones" | "single";
   images: { src: string; alt: string; caption?: string }[];
 };
 
@@ -190,6 +190,20 @@ export const niches: Niche[] = [
       },
     ],
     exampleSlugs: [],
+    showcases: [
+      {
+        eyebrow: "Demo inmobiliaria",
+        title: "Un buscador claro, fichas con fotos y panel de gestión.",
+        text: "Así puede verse tu inmobiliaria: búsqueda por operación, tipo y ciudad, propiedades destacadas con sus fotos y un formulario de consulta en cada ficha, con un panel para administrar todo.",
+        layout: "single",
+        images: [
+          {
+            src: "/projects/inmobiliaria-demo/laptop-tablet.jpg",
+            alt: "Demo de web inmobiliaria con buscador y propiedades destacadas en laptop y ficha de propiedad en tablet",
+          },
+        ],
+      },
+    ],
     steps,
     faq: [
       {
