@@ -31,6 +31,7 @@ export function NichePage({ niche }: { niche: Niche }) {
             alt=""
             fill
             priority
+            quality={90}
             sizes="100vw"
             className="object-cover"
             style={{ objectPosition: niche.imagePosition }}
@@ -86,11 +87,11 @@ export function NichePage({ niche }: { niche: Niche }) {
                   {niche.includesTitle}
                 </h2>
 
-                <div className="mt-6 grid gap-x-10 border-t border-white/15 md:grid-cols-2">
+                <div className="mt-10 grid gap-x-14 border-t border-white/15 md:grid-cols-2">
                   {niche.includes.map((item, index) => (
                     <div
                       key={item.title}
-                      className="flex gap-4 border-b border-white/15 py-4"
+                      className="flex gap-5 border-b border-white/15 py-7"
                     >
                       <span className="w-7 text-sm text-accent">
                         {String(index + 1).padStart(2, "0")}
@@ -112,7 +113,7 @@ export function NichePage({ niche }: { niche: Niche }) {
         </section>
 
         {examples.length > 0 ? (
-          <section className="py-12 sm:py-16">
+          <section className="py-20 sm:py-28">
             <Container>
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                 Trabajos reales
@@ -153,10 +154,10 @@ export function NichePage({ niche }: { niche: Niche }) {
         {niche.showcases?.map((showcase) => (
           <section
             key={showcase.title}
-            className="overflow-hidden py-12 sm:py-16"
+            className="overflow-hidden py-20 sm:py-28"
           >
             <Container>
-              <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+              <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
                 <Reveal direction="left">
                   <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                     {showcase.eyebrow}
@@ -173,15 +174,16 @@ export function NichePage({ niche }: { niche: Niche }) {
               </div>
 
               {showcase.layout === "duo" ? (
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-8">
                   {showcase.images.map((image, index) => (
                     <Reveal key={image.src} delay={index * 0.12}>
-                      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-black/15 ring-1 ring-black/5">
                         <Image
                           src={image.src}
                           alt={image.alt}
                           fill
-                          sizes="(min-width:640px) 50vw, 100vw"
+                          quality={95}
+                          sizes="(min-width:1280px) 600px, (min-width:640px) 50vw, 100vw"
                           className="object-cover"
                         />
                       </div>
@@ -189,26 +191,35 @@ export function NichePage({ niche }: { niche: Niche }) {
                   ))}
                 </div>
               ) : (
-                <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+                <div className="-mx-6 mt-14 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-8 sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible lg:px-0 lg:pb-12">
                   {showcase.images.map((image, index) => (
-                    <Reveal key={image.src} delay={index * 0.1}>
-                      <figure>
-                        <div className="relative aspect-[9/17] overflow-hidden rounded-[1.5rem] ring-1 ring-border">
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            sizes="(min-width:1024px) 25vw, 50vw"
-                            className="object-cover object-top"
-                          />
-                        </div>
-                        {image.caption ? (
-                          <figcaption className="mt-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                            {image.caption}
-                          </figcaption>
-                        ) : null}
-                      </figure>
-                    </Reveal>
+                    <div
+                      key={image.src}
+                      className={`w-[68vw] shrink-0 snap-center sm:w-[44vw] lg:w-auto ${
+                        index % 2 === 1 ? "lg:translate-y-12" : ""
+                      }`}
+                    >
+                      <Reveal delay={index * 0.1}>
+                        <figure>
+                          <div className="relative aspect-[9/17] overflow-hidden rounded-[2.25rem] border-[6px] border-[#16231b] bg-[#16231b] shadow-2xl shadow-black/20">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              fill
+                              quality={95}
+                              sizes="(min-width:1024px) 300px, 68vw"
+                              className="object-cover object-top"
+                            />
+                          </div>
+                          {image.caption ? (
+                            <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                              {String(index + 1).padStart(2, "0")} —{" "}
+                              {image.caption}
+                            </figcaption>
+                          ) : null}
+                        </figure>
+                      </Reveal>
+                    </div>
                   ))}
                 </div>
               )}
@@ -218,9 +229,9 @@ export function NichePage({ niche }: { niche: Niche }) {
 
         <ProcessBand steps={niche.steps} />
 
-        <section className="py-12 sm:py-16">
+        <section className="py-20 sm:py-28">
           <Container>
-            <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+            <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
               <Reveal direction="left">
                 <h2 className="font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl">
                   Preguntas frecuentes
@@ -232,7 +243,7 @@ export function NichePage({ niche }: { niche: Niche }) {
                 className="divide-y divide-border border-y border-border"
               >
                 {niche.faq.map((item) => (
-                  <details key={item.question} className="group py-6">
+                  <details key={item.question} className="group py-8">
                     <summary className="flex cursor-pointer list-none items-center justify-between gap-6">
                       <h3 className="text-lg font-semibold">{item.question}</h3>
                       <span className="text-2xl font-light transition-transform group-open:rotate-45">
@@ -280,7 +291,7 @@ export function NichePage({ niche }: { niche: Niche }) {
               </div>
             </Reveal>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/15 pt-6 text-sm text-white/60">
+            <div className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-white/15 pt-8 text-sm text-white/60">
               <span>También hacemos webs para:</span>
               {others.map((item) => (
                 <Link
