@@ -124,7 +124,9 @@ body {
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 .font-evolve {
@@ -300,4 +302,45 @@ select {
   border: 1px solid rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(18px) saturate(1.1);
   -webkit-backdrop-filter: blur(18px) saturate(1.1);
+}
+
+/* ===========================
+    EDITORIAL
+=========================== */
+
+.font-impact {
+  font-family: var(--font-impact), Impact, sans-serif;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.vertical-word {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker 40s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vertical-word-lg {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
 }

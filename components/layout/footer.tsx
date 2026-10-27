@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/common/container";
+import { niches } from "@/data/niches";
 import { navigation, siteConfig } from "@/data/site";
 
 export function Footer() {
@@ -23,7 +24,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-white/40">
                 Navegación
@@ -37,6 +38,24 @@ export function Footer() {
                     className="text-sm text-white/65 transition hover:text-white"
                   >
                     {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-white/40">
+                Webs para
+              </p>
+
+              <div className="mt-5 flex flex-col gap-3">
+                {niches.map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={item.path}
+                    className="text-sm text-white/65 transition hover:text-white"
+                  >
+                    {item.slug.charAt(0).toUpperCase() + item.slug.slice(1)}
                   </Link>
                 ))}
               </div>

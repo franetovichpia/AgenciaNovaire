@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { Container } from "@/components/common/container";
+import { Reveal } from "@/components/common/reveal";
 import { ProjectModal } from "@/components/projects/project-modal";
 import { projects as allProjects, type Project } from "@/data/site";
 
@@ -44,6 +45,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-16 sm:py-20">
       <Container>
+        <Reveal>
         <div className="relative overflow-hidden rounded-[2.5rem]">
           <AnimatePresence mode="sync">
             <motion.div
@@ -191,6 +193,7 @@ export function Projects() {
             </div>
           </div>
         </div>
+        </Reveal>
       </Container>
 
       <ProjectModal project={openProject} onClose={() => setOpenProject(null)} />

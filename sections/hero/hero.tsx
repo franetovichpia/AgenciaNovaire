@@ -35,7 +35,7 @@ export function Hero() {
           transition={{ duration: 0.6 }}
           className="text-xs font-medium uppercase tracking-[0.3em] text-white/75"
         >
-          Estudio digital · Sitios web para profesionales
+          Estudio digital · Diseño web para profesionales y empresas
         </motion.p>
 
         <motion.h1
@@ -44,9 +44,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="mt-5 max-w-3xl font-display text-5xl font-medium leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
         >
-          Si sos profesional y no tenés web,{" "}
+          Tu negocio merece una presencia digital{" "}
           <span className="italic text-accent">
-            estás perdiendo clientes.
+            a la altura de lo que ofrecés.
           </span>
         </motion.h1>
 
@@ -56,8 +56,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.25 }}
           className="mt-6 max-w-xl text-base leading-8 text-white/75 sm:text-lg"
         >
-          Te armamos una web que vende y agenda por vos, incluso cuando no
-          estás conectado.
+          Diseñamos páginas web para arquitectos, inmobiliarias, turismo y
+          otros profesionales. También desarrollamos tiendas online, sistemas
+          de gestión y automatizaciones para hacer crecer tu negocio.
         </motion.p>
 
         <motion.div

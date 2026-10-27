@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { Container } from "@/components/common/container";
+import { Reveal } from "@/components/common/reveal";
 
 type Service = {
   number: string;
@@ -27,9 +28,9 @@ type Service = {
 const services: Service[] = [
   {
     number: "01",
-    title: "Landing pages",
+    title: "Páginas web profesionales",
     description:
-      "Una página profesional que presenta tu negocio, genera confianza a primera vista y convierte visitas en consultas reales, con tu marca y un camino claro para contactarte.",
+      "Sitios web para profesionales, estudios y empresas, adaptados a celulares y orientados a generar consultas, con tu marca y un camino claro para contactarte.",
     icon: Code2,
     features: [
       "Diseño a medida",
@@ -40,9 +41,9 @@ const services: Service[] = [
   },
   {
     number: "02",
-    title: "Sistemas de gestión",
+    title: "Sistemas de gestión a medida",
     description:
-      "Un panel privado para organizar tu operación diaria: clientes, ventas, turnos o stock en un solo lugar, sin planillas sueltas ni procesos manuales.",
+      "Herramientas para organizar clientes, ventas, turnos, stock y procesos internos en un solo lugar, sin planillas sueltas ni tareas manuales.",
     icon: LayoutDashboard,
     features: [
       "Panel de control",
@@ -53,35 +54,55 @@ const services: Service[] = [
   },
   {
     number: "03",
-    title: "E-commerce",
+    title: "Tiendas online y e-commerce",
     description:
-      "Tu tienda online lista para vender: catálogo de productos, carrito de compras, cobros integrados y un panel simple para administrar pedidos y stock.",
+      "Catálogos, pagos, pedidos y administración de productos en una tienda online lista para vender, con un panel simple para gestionarla.",
     icon: ShoppingBag,
-    features: ["Catálogo de productos", "Carrito y checkout", "Medios de pago", "Panel de administración"],
+    features: [
+      "Catálogo de productos",
+      "Carrito y checkout",
+      "Medios de pago",
+      "Panel de administración",
+    ],
   },
   {
     number: "04",
     title: "Aplicaciones móviles",
     description:
-      "Una app para Android o instalable como PWA, conectada a la nube, con notificaciones y funciones a medida de tu negocio, sin depender de una tienda de aplicaciones.",
+      "Aplicaciones y soluciones web adaptadas a las necesidades de cada negocio: para Android o instalables como PWA, con notificaciones y datos en la nube.",
     icon: Smartphone,
-    features: ["App para Android", "Instalable como PWA", "Notificaciones push", "Datos en la nube"],
+    features: [
+      "App para Android",
+      "Instalable como PWA",
+      "Notificaciones push",
+      "Datos en la nube",
+    ],
   },
   {
     number: "05",
-    title: "Diseño digital",
+    title: "Diseño UI/UX e interfaces digitales",
     description:
-      "Definimos cómo se ve y se siente tu marca en digital: pantallas, flujos de uso y una identidad visual coherente antes de escribir una línea de código.",
+      "Diseño de experiencias, interfaces y prototipos para productos digitales, con una identidad visual coherente antes de escribir una línea de código.",
     icon: Palette,
-    features: ["Interfaces UI/UX", "Wireframes", "Prototipos interactivos", "Identidad de marca"],
+    features: [
+      "Interfaces UI/UX",
+      "Wireframes",
+      "Prototipos interactivos",
+      "Identidad de marca",
+    ],
   },
   {
     number: "06",
-    title: "Automatizaciones",
+    title: "Automatización de procesos",
     description:
-      "Conectamos tus herramientas para que las tareas repetitivas se hagan solas: avisos, mails, carga de datos y procesos que hoy hacés a mano.",
+      "Integraciones entre herramientas, notificaciones y tareas repetitivas automatizadas: avisos, mails y carga de datos que hoy hacés a mano.",
     icon: Workflow,
-    features: ["Envío de emails", "Alertas automáticas", "Formularios conectados", "Procesos internos"],
+    features: [
+      "Envío de emails",
+      "Alertas automáticas",
+      "Formularios conectados",
+      "Procesos internos",
+    ],
   },
 ];
 
@@ -94,35 +115,19 @@ export function Services() {
       className="relative overflow-hidden bg-[#16231b] py-16 text-[#f3efe8] sm:py-24"
     >
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <div className="lg:sticky lg:top-28 lg:self-start">
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
-              Nuestros servicios
-            </span>
-
-            <h2 className="mt-5 font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
-              Soluciones digitales para cada etapa de{" "}
-              <span className="italic text-accent">un negocio.</span>
+        <div className="grid gap-8 lg:grid-cols-[auto_1.15fr_0.7fr] lg:gap-12">
+          <Reveal direction="left" className="flex items-end gap-5 lg:block">
+            <h2 className="font-impact text-6xl leading-none text-accent sm:text-7xl vertical-word-lg lg:text-[8rem]">
+              Servicios
             </h2>
 
-            <p className="mt-5 max-w-md text-base leading-8 text-white/65">
-              Diseñamos y desarrollamos productos pensados para comunicar,
-              vender, organizar y simplificar procesos.
+            <p className="max-w-[16rem] pb-1 text-sm leading-7 text-white/65 lg:hidden">
+              Productos digitales pensados para comunicar, vender, organizar y
+              simplificar procesos.
             </p>
+          </Reveal>
 
-            <div className="relative mt-8 hidden aspect-[16/10] overflow-hidden rounded-[1.75rem] lg:block">
-              <Image
-                src="/brand/hojas.jpg"
-                alt=""
-                fill
-                sizes="32vw"
-                className="object-cover object-[50%_30%]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#16231b]/70 to-transparent" />
-            </div>
-          </div>
-
-          <div className="border-t border-white/15">
+          <Reveal className="border-t border-white/15">
             {services.map((service, index) => {
               const Icon = service.icon;
               const isOpen = active === index;
@@ -146,7 +151,9 @@ export function Services() {
 
                     <h3
                       className={`flex-1 font-display text-2xl font-medium tracking-[-0.03em] transition-colors sm:text-3xl ${
-                        isOpen ? "text-white" : "text-white/55 group-hover:text-white/80"
+                        isOpen
+                          ? "text-white"
+                          : "text-white/55 group-hover:text-white/80"
                       }`}
                     >
                       {service.title}
@@ -198,7 +205,39 @@ export function Services() {
                 </div>
               );
             })}
-          </div>
+          </Reveal>
+
+          <Reveal
+            direction="right"
+            delay={0.15}
+            className="hidden lg:block lg:sticky lg:top-28 lg:self-start"
+          >
+            <p className="text-sm leading-7 text-white/65">
+              Productos digitales pensados para comunicar, vender, organizar y
+              simplificar procesos.
+            </p>
+
+            <div className="relative mt-6 h-[22rem]">
+              <div className="absolute left-0 top-0 h-56 w-40 -rotate-3 overflow-hidden rounded-2xl ring-1 ring-white/15">
+                <Image
+                  src="/brand/hojas.jpg"
+                  alt=""
+                  fill
+                  sizes="12vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute bottom-0 right-0 h-60 w-40 rotate-3 overflow-hidden rounded-2xl ring-1 ring-white/15">
+                <Image
+                  src="/brand/ambiente.jpg"
+                  alt=""
+                  fill
+                  sizes="12vw"
+                  className="object-cover object-[75%_60%]"
+                />
+              </div>
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>
