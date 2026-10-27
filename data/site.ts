@@ -11,23 +11,23 @@ export const siteConfig = {
 export const navigation = [
   {
     name: "Soluciones",
-    href: "#solutions",
+    href: "/#solutions",
   },
   {
     name: "Servicios",
-    href: "#services",
+    href: "/#services",
   },
   {
     name: "Proyectos",
-    href: "#projects",
+    href: "/#projects",
   },
   {
     name: "Nosotros",
-    href: "#about",
+    href: "/#about",
   },
   {
     name: "Preguntas",
-    href: "#faq",
+    href: "/#faq",
   },
   {
     name: "Agendar",

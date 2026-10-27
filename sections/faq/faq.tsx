@@ -1,4 +1,5 @@
 import { Container } from "@/components/common/container";
+import { Reveal } from "@/components/common/reveal";
 import { SectionHeading } from "@/components/common/section-heading";
 
 const questions = [
@@ -39,13 +40,18 @@ export function Faq() {
     <section id="faq" className="bg-secondary/40 py-16 sm:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-          <SectionHeading
-            eyebrow="Preguntas frecuentes"
-            title="Información clara antes de comenzar."
-            description="Estas son algunas de las dudas más comunes sobre nuestra forma de trabajo."
-          />
+          <Reveal direction="left">
+            <SectionHeading
+              eyebrow="Preguntas frecuentes"
+              title="Información clara antes de comenzar."
+              description="Estas son algunas de las dudas más comunes sobre nuestra forma de trabajo."
+            />
+          </Reveal>
 
-          <div className="divide-y divide-border border-y border-border">
+          <Reveal
+            direction="right"
+            className="divide-y divide-border border-y border-border"
+          >
             {questions.map((item, index) => (
               <details key={item.question} className="group py-7">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-6">
@@ -54,9 +60,7 @@ export function Faq() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
 
-                    <h3 className="text-lg font-semibold">
-                      {item.question}
-                    </h3>
+                    <h3 className="text-lg font-semibold">{item.question}</h3>
                   </div>
 
                   <span className="text-2xl font-light transition-transform group-open:rotate-45">
@@ -69,7 +73,7 @@ export function Faq() {
                 </p>
               </details>
             ))}
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

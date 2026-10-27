@@ -8,5 +8,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    ...["arquitectos", "inmobiliarias", "turismo"].map((rubro) => ({
+      url: `https://www.studionovaire.com/web-para-${rubro}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
   ];
 }

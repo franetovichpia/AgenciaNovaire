@@ -4,6 +4,7 @@ import { FormEvent } from "react";
 import { ArrowRight, Mail, MessageCircle } from "lucide-react";
 
 import { Container } from "@/components/common/container";
+import { Reveal } from "@/components/common/reveal";
 import { siteConfig } from "@/data/site";
 
 export function Contact() {
@@ -28,7 +29,7 @@ export function Contact() {
     <section id="contact" className="relative overflow-hidden py-16 sm:py-24">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
+          <Reveal direction="left">
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
               Contacto
             </span>
@@ -74,8 +75,9 @@ export function Contact() {
                 </div>
               </a>
             </div>
-          </div>
+          </Reveal>
 
+          <Reveal direction="right" delay={0.1}>
           <form
             onSubmit={handleSubmit}
             className="rounded-[2rem] border border-border bg-card p-7 shadow-soft sm:p-10"
@@ -158,6 +160,7 @@ export function Contact() {
               El formulario abrirá WhatsApp con la información ingresada.
             </p>
           </form>
+          </Reveal>
         </div>
       </Container>
     </section>

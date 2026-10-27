@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  Anton,
   Playfair_Display,
   Manrope,
   Space_Grotesk,
@@ -16,6 +17,13 @@ const playfair = Playfair_Display({
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
+});
+
+// Tipografía condensada para títulos verticales y bandas editoriales
+const impact = Anton({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-impact",
 });
 
 const evolveSans = Space_Grotesk({
@@ -112,6 +120,7 @@ export default function RootLayout({
           ${playfair.variable}
           ${manrope.variable}
           ${evolveSans.variable}
+          ${impact.variable}
           antialiased
         `}
       >

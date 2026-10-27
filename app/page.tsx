@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { Ticker } from "@/components/editorial/ticker";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 
@@ -34,6 +35,7 @@ export default function HomePage() {
 
       <main id="contenido-principal">
         <Hero />
+        <Ticker />
         <Needs />
         <Services />
         <Projects />
