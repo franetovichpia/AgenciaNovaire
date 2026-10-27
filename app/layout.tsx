@@ -48,46 +48,17 @@ const themeScript = `
 
 // Configuración SEO
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    "https://www.studionovaire.com"
-  ),
+  metadataBase: new URL("https://www.studionovaire.com"),
 
   title: {
-    default:
-      "Novaire Studio | Diseño Web para Profesionales y Empresas",
+    default: "Novaire Studio | Diseño Web para Profesionales",
     template: "%s | Novaire Studio",
   },
 
   description:
-    "Diseñamos páginas web para arquitectos, inmobiliarias, turismo y profesionales. Desarrollamos tiendas online, sistemas de gestión y automatizaciones a medida para empresas y emprendimientos.",
+    "Diseño y desarrollo web para profesionales, arquitectos, inmobiliarias, turismo y empresas. Creamos tiendas online, sistemas de gestión y automatizaciones a medida.",
 
   applicationName: "Novaire Studio",
-
-  keywords: [
-    "Novaire Studio",
-    "agencia de diseño web",
-    "diseño web Argentina",
-    "desarrollo web Argentina",
-    "diseño web para profesionales",
-    "páginas web para arquitectos",
-    "diseño web para estudios de arquitectura",
-    "páginas web para inmobiliarias",
-    "diseño web inmobiliario",
-    "páginas web para agencias de viajes",
-    "diseño web para turismo",
-    "sitios web para profesionales",
-    "páginas web para abogados",
-    "páginas web para empresas",
-    "desarrollo web a medida",
-    "landing pages",
-    "tiendas online",
-    "e-commerce",
-    "sistemas de gestión",
-    "sistemas de turnos online",
-    "automatización de procesos",
-    "automatización para empresas",
-    "desarrollo de software",
-  ],
 
   alternates: {
     canonical: "/",
@@ -107,23 +78,17 @@ export const metadata: Metadata = {
     locale: "es_AR",
     url: "https://www.studionovaire.com/",
     siteName: "Novaire Studio",
-
-    title:
-      "Novaire Studio | Diseño Web y Soluciones Digitales",
-
+    title: "Novaire Studio | Diseño Web y Soluciones Digitales",
     description:
-      "Creamos sitios web para arquitectos, inmobiliarias, turismo y profesionales. Desarrollo web, tiendas online, sistemas y automatizaciones para potenciar negocios.",
+      "Sitios web para profesionales y empresas, e-commerce, sistemas de gestión y automatizaciones.",
   },
 
   twitter: {
-    card: "summary",
-    title:
-      "Novaire Studio | Diseño Web y Automatización",
+    card: "summary_large_image",
+    title: "Novaire Studio | Diseño Web y Soluciones Digitales",
     description:
-      "Sitios web profesionales, e-commerce, sistemas de gestión y automatizaciones a medida.",
+      "Soluciones digitales a medida para profesionales, empresas y emprendimientos.",
   },
-
-  category: "technology",
 };
 
 // Layout principal

@@ -27,9 +27,9 @@ type Service = {
 const services: Service[] = [
   {
     number: "01",
-    title: "Landing pages",
+    title: "Páginas web profesionales",
     description:
-      "Una página profesional que presenta tu negocio, genera confianza a primera vista y convierte visitas en consultas reales, con tu marca y un camino claro para contactarte.",
+      "Sitios web para profesionales, estudios y empresas, adaptados a celulares y orientados a generar consultas, con tu marca y un camino claro para contactarte.",
     icon: Code2,
     features: [
       "Diseño a medida",
@@ -40,9 +40,9 @@ const services: Service[] = [
   },
   {
     number: "02",
-    title: "Sistemas de gestión",
+    title: "Sistemas de gestión a medida",
     description:
-      "Un panel privado para organizar tu operación diaria: clientes, ventas, turnos o stock en un solo lugar, sin planillas sueltas ni procesos manuales.",
+      "Herramientas para organizar clientes, ventas, turnos, stock y procesos internos en un solo lugar, sin planillas sueltas ni tareas manuales.",
     icon: LayoutDashboard,
     features: [
       "Panel de control",
@@ -53,9 +53,9 @@ const services: Service[] = [
   },
   {
     number: "03",
-    title: "E-commerce",
+    title: "Tiendas online y e-commerce",
     description:
-      "Tu tienda online lista para vender: catálogo de productos, carrito de compras, cobros integrados y un panel simple para administrar pedidos y stock.",
+      "Catálogos, pagos, pedidos y administración de productos en una tienda online lista para vender, con un panel simple para gestionarla.",
     icon: ShoppingBag,
     features: ["Catálogo de productos", "Carrito y checkout", "Medios de pago", "Panel de administración"],
   },
@@ -63,23 +63,23 @@ const services: Service[] = [
     number: "04",
     title: "Aplicaciones móviles",
     description:
-      "Una app para Android o instalable como PWA, conectada a la nube, con notificaciones y funciones a medida de tu negocio, sin depender de una tienda de aplicaciones.",
+      "Aplicaciones y soluciones web adaptadas a las necesidades de cada negocio: para Android o instalables como PWA, con notificaciones y datos en la nube.",
     icon: Smartphone,
     features: ["App para Android", "Instalable como PWA", "Notificaciones push", "Datos en la nube"],
   },
   {
     number: "05",
-    title: "Diseño digital",
+    title: "Diseño UI/UX e interfaces digitales",
     description:
-      "Definimos cómo se ve y se siente tu marca en digital: pantallas, flujos de uso y una identidad visual coherente antes de escribir una línea de código.",
+      "Diseño de experiencias, interfaces y prototipos para productos digitales, con una identidad visual coherente antes de escribir una línea de código.",
     icon: Palette,
     features: ["Interfaces UI/UX", "Wireframes", "Prototipos interactivos", "Identidad de marca"],
   },
   {
     number: "06",
-    title: "Automatizaciones",
+    title: "Automatización de procesos",
     description:
-      "Conectamos tus herramientas para que las tareas repetitivas se hagan solas: avisos, mails, carga de datos y procesos que hoy hacés a mano.",
+      "Integraciones entre herramientas, notificaciones y tareas repetitivas automatizadas: avisos, mails y carga de datos que hoy hacés a mano.",
     icon: Workflow,
     features: ["Envío de emails", "Alertas automáticas", "Formularios conectados", "Procesos internos"],
   },
