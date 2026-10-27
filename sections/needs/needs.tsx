@@ -22,8 +22,8 @@ export function Needs() {
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4, margin: "0px 0px -12% 0px" }}
-            transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
+            viewport={{ once: true, amount: 0.4, margin: "0px 0px -18% 0px" }}
+            transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#fff1b5]">El problema real</span>
             <h2 className="mt-5 max-w-xl font-display text-2xl text-white sm:text-3xl">
@@ -42,7 +42,7 @@ export function Needs() {
                 initial={{ opacity: 0, x: 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 + index * 0.18 }}
+                transition={{ duration: 2, ease: [0.16, 1, 0.3, 1], delay: 0.25 + index * 0.25 }}
                 className="glass rounded-[1.75rem] p-7"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#fff1b5] text-black"><Icon className="h-5 w-5" /></span>
