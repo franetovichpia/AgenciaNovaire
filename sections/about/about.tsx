@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { Container } from "@/components/common/container";
@@ -40,16 +39,14 @@ export function About() {
               Sobre Novaire
             </span>
 
-            <div className="relative mt-6 flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[2rem] bg-[#171310] p-8">
-              <Image src="/brand/hojas.jpg" alt="" fill sizes="(min-width:1024px) 32vw, 100vw" className="object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/20" />
+            <div className="relative mt-6 flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-[2rem] bg-[#0a0a0a] p-8">
 
-              <span className="relative font-evolve text-7xl tracking-[-0.03em]" style={{ color: "#fff1b5" }}>
-                N.
+              <span className="relative font-display text-4xl text-white sm:text-5xl">
+                Novaire <span className="italic text-white/80">studio</span>
               </span>
 
               <div className="relative rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-6 backdrop-blur-xl">
-                <p className="font-display text-2xl font-medium leading-tight tracking-[-0.04em] text-white">
+                <p className="text-lg leading-8 text-white">
                   Estrategia, diseño y desarrollo trabajando en una misma
                   dirección.
                 </p>
@@ -67,7 +64,7 @@ export function About() {
             viewport={{ once: true, amount: 0.2 }}
             className="flex flex-col justify-center"
           >
-            <h2 className="font-display text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-3xl lg:text-4xl">
               Creamos herramientas digitales que ayudan a los negocios a verse
               mejor, trabajar mejor y crecer.
             </h2>

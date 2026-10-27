@@ -150,7 +150,7 @@ export function Contact() {
 
             <button
               type="submit"
-              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition hover:bg-[#b9632f]"
+              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground transition hover:opacity-85"
             >
               Enviar por WhatsApp
               <ArrowRight className="h-4 w-4" />

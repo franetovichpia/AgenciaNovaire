@@ -16,8 +16,6 @@ export type Niche = {
   title: string;
   accent: string;
   intro: string;
-  image: string;
-  imagePosition: string;
   includesTitle: string;
   includes: { title: string; text: string }[];
   exampleSlugs: string[];
@@ -54,8 +52,6 @@ export const niches: Niche[] = [
     accent: "a su altura.",
     intro:
       "Sitios web para arquitectos y estudios de arquitectura que quieren presentar sus proyectos, transmitir confianza y conseguir nuevas consultas.",
-    image: "/brand/ambiente.jpg",
-    imagePosition: "70% 65%",
     includesTitle: "Qué incluye tu web de arquitectura",
     includes: [
       {
@@ -161,8 +157,6 @@ export const niches: Niche[] = [
     accent: "como lo que son.",
     intro:
       "Sitios web para inmobiliarias y desarrollos que presentan cada propiedad con claridad, generan confianza y convierten visitas en consultas.",
-    image: "/brand/hojas.jpg",
-    imagePosition: "50% 40%",
     includesTitle: "Qué incluye tu web inmobiliaria",
     includes: [
       {
@@ -236,8 +230,6 @@ export const niches: Niche[] = [
     accent: "como se vive.",
     intro:
       "Sitios web para agencias de viajes, alojamientos y emprendimientos turísticos que inspiran a los visitantes y los convierten en reservas.",
-    image: "/brand/hojas.jpg",
-    imagePosition: "50% 30%",
     includesTitle: "Qué incluye tu web de turismo",
     includes: [
       {
@@ -351,8 +343,6 @@ export const niches: Niche[] = [
     accent: "sin escribirte.",
     intro:
       "Sitios web para centros de estética, spas y salones de belleza, con un catálogo de tratamientos, reserva de turnos online y gestión de agenda en un solo lugar.",
-    image: "/brand/ambiente.jpg",
-    imagePosition: "35% 45%",
     includesTitle: "Qué incluye tu web de estética y gestión de turnos",
     includes: [
       {
@@ -453,8 +443,6 @@ export const niches: Niche[] = [
     accent: "una web que enseña a elegir.",
     intro:
       "Sitios web para academias, institutos y cursos de oficios que muestran su propuesta con claridad, publican las próximas fechas y convierten visitas en inscripciones.",
-    image: "/brand/ambiente.jpg",
-    imagePosition: "70% 70%",
     includesTitle: "Qué incluye tu web de cursos y formación",
     includes: [
       {
@@ -546,8 +534,6 @@ export const niches: Niche[] = [
     accent: "una oportunidad.",
     intro:
       "Sitios web para concesionarias y agencias de autos con stock actualizado, buscador de vehículos, cotización de permutas y contacto directo con tus vendedores.",
-    image: "/brand/ambiente.jpg",
-    imagePosition: "50% 50%",
     includesTitle: "Qué incluye tu web de concesionaria",
     includes: [
       {

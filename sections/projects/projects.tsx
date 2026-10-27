@@ -85,7 +85,7 @@ export function Projects() {
                 transition={{ duration: 0.3 }}
                 className="mt-5 max-w-xl"
               >
-                <h2 className="font-display text-3xl font-medium tracking-[-0.03em] text-white sm:text-4xl">
+                <h2 className="font-display text-3xl font-medium tracking-[-0.03em] text-white sm:text-3xl">
                   {active.title}
                 </h2>
 
@@ -99,7 +99,7 @@ export function Projects() {
               <button
                 type="button"
                 onClick={() => setOpenProject(active)}
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#171310] transition hover:opacity-90"
+                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition hover:opacity-90"
               >
                 Ver proyecto
               </button>
@@ -171,7 +171,7 @@ export function Projects() {
                         <div className="flex h-full w-full items-center justify-center p-4">
                           <span
                             className="font-evolve text-center text-lg leading-tight tracking-[-0.02em]"
-                            style={{ color: "#fff1b5" }}
+                            style={{ color: "#f2f0ea" }}
                           >
                             {project.title}
                           </span>

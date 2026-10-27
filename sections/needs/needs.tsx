@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { CalendarCheck, MessageSquareText, SearchX, TimerReset } from "lucide-react";
 
@@ -15,9 +14,7 @@ const problems = [
 
 export function Needs() {
   return (
-    <section id="solutions" className="relative overflow-hidden bg-[#14120f] py-16 text-white sm:py-24">
-      <Image src="/brand/hojas.jpg" alt="" fill sizes="100vw" className="object-cover object-center opacity-35" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#14120f]/90 via-[#14120f]/70 to-[#14120f]/50" />
+    <section id="solutions" className="relative overflow-hidden bg-[#0a0a0a] py-16 text-white sm:py-24">
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <motion.div

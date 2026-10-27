@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {
-  Anton,
+  Archivo,
   Playfair_Display,
   Manrope,
   Space_Grotesk,
@@ -12,21 +12,23 @@ import { JsonLd } from "@/components/common/json-ld";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 
 // Tipografías
+// Serif cursiva para los acentos y el logotipo
 const playfair = Playfair_Display({
   subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+});
+
+// Grotesca ancha en mayúsculas para títulos
+const archivo = Archivo({
+  subsets: ["latin"],
+  axes: ["wdth"],
   variable: "--font-display",
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-
-// Tipografía condensada para títulos verticales y bandas editoriales
-const impact = Anton({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-impact",
 });
 
 const evolveSans = Space_Grotesk({
@@ -133,7 +135,7 @@ export default function RootLayout({
           ${playfair.variable}
           ${manrope.variable}
           ${evolveSans.variable}
-          ${impact.variable}
+          ${archivo.variable}
           antialiased
         `}
       >

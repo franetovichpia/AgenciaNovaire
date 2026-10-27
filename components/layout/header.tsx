@@ -40,11 +40,10 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-semibold tracking-[-0.05em]"
+            className="font-display text-xl"
             onClick={closeMenu}
           >
-            Novaire
-            <span className="text-accent">.</span>
+            Novaire <span className="italic">studio</span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -52,7 +51,7 @@ export function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-xs font-medium uppercase tracking-[0.16em] transition-colors ${
                   solid
                     ? "text-muted-foreground hover:text-foreground"
                     : "text-white/80 hover:text-white"
@@ -68,7 +67,11 @@ export function Header() {
 
             <Link
               href="/agendar"
-              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:opacity-90"
+              className={`rounded-full px-6 py-3 text-xs font-semibold uppercase tracking-[0.12em] transition hover:opacity-85 ${
+                solid
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-white text-black"
+              }`}
             >
               Agendar reunión
             </Link>

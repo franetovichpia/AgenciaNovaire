@@ -14,7 +14,7 @@ export function Niches() {
             <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
               Webs por rubro
             </span>
-            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-3xl lg:text-4xl">
               Diseño web pensado para{" "}
               <span className="italic text-primary">tu actividad.</span>
             </h2>

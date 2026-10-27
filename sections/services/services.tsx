@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Plus,
@@ -112,12 +111,12 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#16231b] py-16 text-[#f3efe8] sm:py-24"
+      className="relative overflow-hidden bg-[#0a0a0a] py-16 text-[#f3efe8] sm:py-24"
     >
       <Container>
-        <div className="grid gap-8 lg:grid-cols-[auto_1.15fr_0.7fr] lg:gap-12">
+        <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:gap-16">
           <Reveal direction="left" className="flex items-end gap-5 lg:block">
-            <h2 className="font-impact text-6xl leading-none text-accent sm:text-7xl vertical-word-lg lg:text-[8rem]">
+            <h2 className="font-impact text-5xl leading-none text-accent sm:text-6xl vertical-word-lg lg:text-[5rem]">
               Servicios
             </h2>
 
@@ -127,115 +126,90 @@ export function Services() {
             </p>
           </Reveal>
 
-          <Reveal className="border-t border-white/15">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              const isOpen = active === index;
-
-              return (
-                <div key={service.title} className="border-b border-white/15">
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    onClick={() => setActive(index)}
-                    onMouseEnter={() => setActive(index)}
-                    className="group flex w-full items-center gap-5 py-6 text-left sm:gap-8"
-                  >
-                    <span
-                      className={`w-8 text-sm transition-colors ${
-                        isOpen ? "text-accent" : "text-white/40"
-                      }`}
-                    >
-                      {service.number}
-                    </span>
-
-                    <h3
-                      className={`flex-1 font-display text-2xl font-medium tracking-[-0.03em] transition-colors sm:text-3xl ${
-                        isOpen
-                          ? "text-white"
-                          : "text-white/55 group-hover:text-white/80"
-                      }`}
-                    >
-                      {service.title}
-                    </h3>
-
-                    <span
-                      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition ${
-                        isOpen
-                          ? "border-accent bg-accent text-[#16231b]"
-                          : "border-white/25 text-white/60"
-                      }`}
-                    >
-                      {isOpen ? (
-                        <Icon className="h-4 w-4" />
-                      ) : (
-                        <Plus className="h-4 w-4" />
-                      )}
-                    </span>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen ? (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="pb-7 pl-[3.25rem] sm:pl-[4rem]">
-                          <p className="max-w-xl text-sm leading-7 text-white/70 sm:text-base">
-                            {service.description}
-                          </p>
-
-                          <div className="mt-5 flex flex-wrap gap-2">
-                            {service.features.map((feature) => (
-                              <span
-                                key={feature}
-                                className="rounded-full border border-accent/40 px-3.5 py-1.5 text-xs font-medium text-accent"
-                              >
-                                {feature}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </motion.div>
-                    ) : null}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </Reveal>
-
-          <Reveal
-            direction="right"
-            delay={0.15}
-            className="hidden lg:block lg:sticky lg:top-28 lg:self-start"
-          >
-            <p className="text-sm leading-7 text-white/65">
+          <Reveal>
+            <p className="mb-8 hidden max-w-xl text-base leading-8 text-white/65 lg:block">
               Productos digitales pensados para comunicar, vender, organizar y
               simplificar procesos.
             </p>
 
-            <div className="relative mt-6 h-[22rem]">
-              <div className="absolute left-0 top-0 h-56 w-40 -rotate-3 overflow-hidden rounded-2xl ring-1 ring-white/15">
-                <Image
-                  src="/brand/hojas.jpg"
-                  alt=""
-                  fill
-                  sizes="12vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="absolute bottom-0 right-0 h-60 w-40 rotate-3 overflow-hidden rounded-2xl ring-1 ring-white/15">
-                <Image
-                  src="/brand/ambiente.jpg"
-                  alt=""
-                  fill
-                  sizes="12vw"
-                  className="object-cover object-[75%_60%]"
-                />
-              </div>
+            <div className="border-t border-white/15">
+              {services.map((service, index) => {
+                const Icon = service.icon;
+                const isOpen = active === index;
+
+                return (
+                  <div key={service.title} className="border-b border-white/15">
+                    <button
+                      type="button"
+                      aria-expanded={isOpen}
+                      onClick={() => setActive(index)}
+                      onMouseEnter={() => setActive(index)}
+                      className="group flex w-full items-center gap-5 py-6 text-left sm:gap-8"
+                    >
+                      <span
+                        className={`w-8 text-sm transition-colors ${
+                          isOpen ? "text-accent" : "text-white/40"
+                        }`}
+                      >
+                        {service.number}
+                      </span>
+
+                      <h3
+                        className={`flex-1 font-display text-2xl font-medium tracking-[-0.03em] transition-colors sm:text-3xl ${
+                          isOpen
+                            ? "text-white"
+                            : "text-white/55 group-hover:text-white/80"
+                        }`}
+                      >
+                        {service.title}
+                      </h3>
+
+                      <span
+                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition ${
+                          isOpen
+                            ? "border-accent bg-accent text-[#0a0a0a]"
+                            : "border-white/25 text-white/60"
+                        }`}
+                      >
+                        {isOpen ? (
+                          <Icon className="h-4 w-4" />
+                        ) : (
+                          <Plus className="h-4 w-4" />
+                        )}
+                      </span>
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isOpen ? (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pb-7 pl-[3.25rem] sm:pl-[4rem]">
+                            <p className="max-w-xl text-sm leading-7 text-white/70 sm:text-base">
+                              {service.description}
+                            </p>
+
+                            <div className="mt-5 flex flex-wrap gap-2">
+                              {service.features.map((feature) => (
+                                <span
+                                  key={feature}
+                                  className="rounded-full border border-accent/40 px-3.5 py-1.5 text-xs font-medium text-accent"
+                                >
+                                  {feature}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
           </Reveal>
         </div>
