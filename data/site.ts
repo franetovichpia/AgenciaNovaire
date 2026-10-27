@@ -111,7 +111,7 @@ export const projects: Project[] = [
       "/projects/landing-arquitecta/home.jpg",
       "/projects/landing-arquitecta/contacto.jpg",
     ],
-    tint: "from-[#1f2a2c] via-[#131c1d] to-[#0a1011]",
+    tint: "from-[#2a2a2a] via-[#171717] to-[#0a0a0a]",
     whatsappName: "esta landing de arquitectura",
   },
   {
@@ -132,7 +132,7 @@ export const projects: Project[] = [
       "/projects/portal-comunicativo/sofa.jpg",
       "/projects/portal-comunicativo/laptop.jpg",
     ],
-    tint: "from-[#233327] via-[#15201a] to-[#0b120e]",
+    tint: "from-[#262626] via-[#151515] to-[#0a0a0a]",
     whatsappName: "este proyecto comunicativo",
   },
   {
