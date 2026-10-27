@@ -22,7 +22,8 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const solid = scrolled || isOpen;
+  const solid = true;
+  void scrolled;
 
   function closeMenu() {
     setIsOpen(false);

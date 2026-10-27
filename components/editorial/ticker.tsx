@@ -13,7 +13,7 @@ export function Ticker() {
   return (
     <div
       aria-hidden="true"
-      className="overflow-hidden border-y border-black bg-[#f2f0ea] py-3 text-[#0a0a0a]"
+      className="overflow-hidden card-section bg-background py-3 text-foreground"
     >
       <div className="ticker-track flex w-max whitespace-nowrap">
         {[0, 1].map((copy) => (

@@ -14,7 +14,7 @@ const problems = [
 
 export function Needs() {
   return (
-    <section id="solutions" className="relative overflow-hidden bg-[#0a0a0a] py-16 text-white sm:py-24">
+    <section id="solutions" className="card-section card-ink relative py-16 text-white sm:py-24">
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <motion.div

@@ -26,7 +26,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden py-16 sm:py-24">
+    <section id="contact" className="card-section card-ink relative py-16 sm:py-24">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <Reveal direction="left">

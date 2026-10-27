@@ -7,7 +7,7 @@ import { niches } from "@/data/niches";
 
 export function Niches() {
   return (
-    <section id="rubros" className="py-20 sm:py-28">
+    <section id="rubros" className="card-section bg-background py-16 sm:py-24">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <Reveal direction="left">

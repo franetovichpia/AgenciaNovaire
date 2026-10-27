@@ -7,7 +7,7 @@ import { navigation, siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] py-12 text-white">
+    <footer className="card-section card-ink py-14 text-white">
       <Container>
         <div className="grid gap-10 border-b border-white/15 pb-10 lg:grid-cols-[1.3fr_0.7fr]">
           <div>
@@ -55,7 +55,7 @@ export function Footer() {
                     href={item.path}
                     className="text-sm text-white/65 transition hover:text-white"
                   >
-                    {item.slug.charAt(0).toUpperCase() + item.slug.slice(1)}
+                    {item.label}
                   </Link>
                 ))}
               </div>

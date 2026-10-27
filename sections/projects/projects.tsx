@@ -43,8 +43,8 @@ export function Projects() {
   }
 
   return (
-    <section id="projects" className="py-16 sm:py-20">
-      <Container>
+    <section id="projects" className="mx-2 sm:mx-4 py-2 sm:py-3">
+      <div>
         <Reveal>
         <div className="relative overflow-hidden rounded-[2.5rem]">
           <AnimatePresence mode="sync">
@@ -194,7 +194,7 @@ export function Projects() {
           </div>
         </div>
         </Reveal>
-      </Container>
+      </div>
 
       <ProjectModal project={openProject} onClose={() => setOpenProject(null)} />
     </section>

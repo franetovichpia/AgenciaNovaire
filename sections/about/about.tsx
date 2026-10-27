@@ -27,7 +27,7 @@ const values = [
 
 export function About() {
   return (
-    <section id="about" className="overflow-hidden py-16 sm:py-24">
+    <section id="about" className="card-section bg-background py-16 sm:py-24">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <motion.div

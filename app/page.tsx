@@ -43,7 +43,7 @@ export default function HomePage() {
       <JsonLd data={faqSchema(questions)} />
       <Header />
 
-      <main id="contenido-principal">
+      <main id="contenido-principal" className="pt-16">
         <Hero />
         <Ticker />
         <Needs />
