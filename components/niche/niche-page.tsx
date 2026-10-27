@@ -46,30 +46,71 @@ export function NichePage({ niche }: { niche: Niche }) {
           <HeroBackdrop />
 
           <Container className="relative pb-14 pt-32 sm:pb-20">
-            <p className="font-serif-italic text-xl text-white/80 sm:text-2xl">
-              {niche.eyebrow}
-            </p>
+            <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+              <div>
+                <p className="font-serif-italic text-xl text-white/80 sm:text-2xl">
+                  {niche.eyebrow}
+                </p>
 
-            <h1 className="mt-5 max-w-3xl font-display text-3xl sm:text-5xl lg:text-6xl">
-              {niche.title}{" "}
-              <span className="italic">{niche.accent}</span>
-            </h1>
+                <h1 className="mt-5 max-w-3xl font-display text-3xl sm:text-5xl lg:text-5xl xl:text-6xl">
+                  {niche.title}{" "}
+                  <span className="italic">{niche.accent}</span>
+                </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-white/75 sm:text-lg">
-              {niche.intro}
-            </p>
+                <p className="mt-6 max-w-xl text-base leading-8 text-white/75 sm:text-lg">
+                  {niche.intro}
+                </p>
 
-            <div className="mt-9 max-w-md">
-              <Link
-                href="/agendar"
-                className="flex items-center justify-between gap-6 border-b border-white/50 pb-4 text-base font-medium transition hover:border-white"
-              >
-                Solicitar una propuesta
-                <ArrowUpRight className="h-5 w-5" />
-              </Link>
-              <p className="mt-3 text-xs text-white/55">
-                Sin costo · 30 minutos · Sin compromiso
-              </p>
+                <div className="mt-9 max-w-md">
+                  <Link
+                    href="/agendar"
+                    className="flex items-center justify-between gap-6 border-b border-white/50 pb-4 text-base font-medium transition hover:border-[#fff1b5] hover:text-[#fff1b5]"
+                  >
+                    Solicitar una propuesta
+                    <ArrowUpRight className="h-5 w-5" />
+                  </Link>
+                  <p className="mt-3 text-xs text-white/55">
+                    Sin costo · 30 minutos · Sin compromiso
+                  </p>
+                </div>
+              </div>
+
+              <Reveal direction="right" delay={0.2} className="relative mx-auto w-full max-w-md lg:max-w-none">
+                <div className="glass rounded-[2rem] p-3 sm:p-4">
+                  <div
+                    className="relative overflow-hidden rounded-[1.5rem]"
+                    style={{ aspectRatio: niche.heroRatio }}
+                  >
+                    <Image
+                      src={niche.heroImages[0].src}
+                      alt={niche.heroImages[0].alt}
+                      fill
+                      priority
+                      quality={92}
+                      sizes="(min-width:1024px) 480px, 90vw"
+                      className="object-cover object-top"
+                    />
+                    <span className="glass absolute bottom-3 right-3 rounded-full px-4 py-2 text-xs font-medium text-white">
+                      {niche.heroImages[0].caption}
+                    </span>
+                  </div>
+                </div>
+
+                {niche.heroImages[1] ? (
+                  <div className="glass absolute -bottom-6 -left-4 hidden w-[34%] rounded-[1.25rem] p-2 sm:block lg:-left-10">
+                    <div className="relative aspect-[3/4] overflow-hidden rounded-[0.9rem]">
+                      <Image
+                        src={niche.heroImages[1].src}
+                        alt={niche.heroImages[1].alt}
+                        fill
+                        quality={90}
+                        sizes="180px"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                  </div>
+                ) : null}
+              </Reveal>
             </div>
           </Container>
         </section>

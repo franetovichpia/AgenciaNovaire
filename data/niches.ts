@@ -7,6 +7,8 @@ export type Showcase = {
   images: { src: string; alt: string; caption?: string }[];
 };
 
+export type HeroImage = { src: string; alt: string; caption: string };
+
 export type Niche = {
   slug: string;
   label: string;
@@ -17,6 +19,8 @@ export type Niche = {
   title: string;
   accent: string;
   intro: string;
+  heroRatio: string;
+  heroImages: HeroImage[];
   includesTitle: string;
   includes: { title: string; text: string }[];
   exampleSlugs: string[];
@@ -54,6 +58,19 @@ export const niches: Niche[] = [
     accent: "a su altura.",
     intro:
       "Sitios web para arquitectos y estudios de arquitectura que quieren presentar sus proyectos, transmitir confianza y conseguir nuevas consultas.",
+    heroRatio: "4 / 5",
+    heroImages: [
+      {
+        src: "/projects/bim-3d-5d/escritorio.jpg",
+        alt: "Portfolio de un arquitecto con visor 3D en laptop y monitor",
+        caption: "Portfolio con visor 3D",
+      },
+      {
+        src: "/projects/landing-arquitecta/obra-ocampo.jpg",
+        alt: "Sitio de obras de un taller de arquitectura en celular",
+        caption: "Sitio de obras",
+      },
+    ],
     includesTitle: "Qué incluye tu web de arquitectura",
     includes: [
       {
@@ -160,6 +177,14 @@ export const niches: Niche[] = [
     accent: "como lo que son.",
     intro:
       "Sitios web para inmobiliarias y desarrollos que presentan cada propiedad con claridad, generan confianza y convierten visitas en consultas.",
+    heroRatio: "4 / 5",
+    heroImages: [
+      {
+        src: "/projects/inmobiliaria-demo/laptop-tablet.jpg",
+        alt: "Demo de web inmobiliaria con buscador y ficha de propiedad",
+        caption: "Demo · Buscador y fichas",
+      },
+    ],
     includesTitle: "Qué incluye tu web inmobiliaria",
     includes: [
       {
@@ -234,6 +259,19 @@ export const niches: Niche[] = [
     accent: "como se vive.",
     intro:
       "Sitios web para agencias de viajes, alojamientos y emprendimientos turísticos que inspiran a los visitantes y los convierten en reservas.",
+    heroRatio: "5 / 4",
+    heroImages: [
+      {
+        src: "/projects/turismo-demo/inicio.jpg",
+        alt: "Inicio de la web de una agencia de viajes",
+        caption: "Demo · Agencia de viajes",
+      },
+      {
+        src: "/projects/surf-trips/inicio.jpg",
+        alt: "Inicio de la web Surf Trips",
+        caption: "Surf Trips",
+      },
+    ],
     includesTitle: "Qué incluye tu web de turismo",
     includes: [
       {
@@ -348,6 +386,19 @@ export const niches: Niche[] = [
     accent: "sin escribirte.",
     intro:
       "Sitios web para centros de estética, spas y salones de belleza, con un catálogo de tratamientos, reserva de turnos online y gestión de agenda en un solo lugar.",
+    heroRatio: "16 / 10",
+    heroImages: [
+      {
+        src: "/projects/esteticas/sitio-inicio.jpg",
+        alt: "Inicio de la web de un centro de estética",
+        caption: "Demo · Centro de estética",
+      },
+      {
+        src: "/projects/esteticas/turnos-calendario.jpg",
+        alt: "Calendario de reserva de turnos",
+        caption: "Reserva de turnos",
+      },
+    ],
     includesTitle: "Qué incluye tu web de estética y gestión de turnos",
     includes: [
       {
@@ -449,6 +500,14 @@ export const niches: Niche[] = [
     accent: "una web que enseña a elegir.",
     intro:
       "Sitios web para academias, institutos y cursos de oficios que muestran su propuesta con claridad, publican las próximas fechas y convierten visitas en inscripciones.",
+    heroRatio: "5 / 4",
+    heroImages: [
+      {
+        src: "/projects/academia-demo/inicio.jpg",
+        alt: "Inicio de la web de una academia de mecánica",
+        caption: "Demo · Academia de cursos",
+      },
+    ],
     includesTitle: "Qué incluye tu web de cursos y formación",
     includes: [
       {
@@ -541,6 +600,14 @@ export const niches: Niche[] = [
     accent: "una oportunidad.",
     intro:
       "Sitios web para concesionarias y agencias de autos con stock actualizado, buscador de vehículos, cotización de permutas y contacto directo con tus vendedores.",
+    heroRatio: "16 / 10",
+    heroImages: [
+      {
+        src: "/projects/concesionaria-demo/inicio.jpg",
+        alt: "Inicio de la web de una concesionaria con buscador de vehículos",
+        caption: "Demo · Concesionaria",
+      },
+    ],
     includesTitle: "Qué incluye tu web de concesionaria",
     includes: [
       {

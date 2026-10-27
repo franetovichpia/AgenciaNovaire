@@ -31,9 +31,10 @@ export function About() {
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <motion.div
-            initial={{ opacity: 0, x: -25 }}
+            initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
               Sobre Novaire
@@ -59,14 +60,15 @@ export function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 25 }}
+            initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col justify-center"
           >
             <h2 className="font-display text-3xl font-medium leading-tight tracking-[-0.05em] sm:text-3xl lg:text-4xl">
-              Creamos herramientas digitales que ayudan a los negocios a verse
-              mejor, trabajar mejor y crecer.
+              Creamos herramientas digitales que ayudan a los negocios a{" "}
+              <span className="hl">verse mejor, trabajar mejor y crecer.</span>
             </h2>
 
             <p className="mt-8 max-w-2xl text-base leading-8 text-muted-foreground">

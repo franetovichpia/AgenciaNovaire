@@ -21,8 +21,8 @@ const projects = FEATURED_SLUGS.flatMap((slug) =>
   allProjects.filter((project) => project.slug === slug),
 );
 
-const CARD_WIDTH = 190;
-const CARD_HEIGHT = 270;
+const CARD_WIDTH = 230;
+const CARD_HEIGHT = 330;
 
 function circularOffset(index: number, activeIndex: number, total: number) {
   let offset = index - activeIndex;
@@ -85,34 +85,49 @@ export function Projects() {
                 transition={{ duration: 0.3 }}
                 className="mt-5 max-w-xl"
               >
-                <h2 className="font-display text-3xl font-medium tracking-[-0.03em] text-white sm:text-3xl">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#fff1b5]">
+                  {active.category}
+                </p>
+
+                <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl">
                   {active.title}
                 </h2>
 
-                <p className="mt-3 text-sm leading-7 text-white/70 sm:text-base">
+                <p className="mt-5 text-base leading-8 text-white/85 sm:text-lg">
                   {active.summary}
                 </p>
+
+                <div className="mt-6 flex flex-wrap justify-center gap-2">
+                  {active.highlights.map((item) => (
+                    <span
+                      key={item}
+                      className="glass rounded-full px-4 py-2 text-xs font-medium text-white sm:text-sm"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </motion.div>
             </AnimatePresence>
 
-            <div className="mt-7 flex items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <button
                 type="button"
                 onClick={() => setOpenProject(active)}
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0a0a0a] transition hover:opacity-90"
+                className="rounded-full bg-white px-8 py-4 text-sm font-semibold text-[#0a0a0a] transition duration-300 hover:bg-[#fff1b5] hover:shadow-[0_0_36px_rgba(255,241,181,0.5)]"
               >
                 Ver proyecto
               </button>
 
               <a
                 href="/agendar"
-                className="rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/20"
+                className="rounded-full border border-white/30 bg-white/10 px-8 py-4 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/20"
               >
                 Empezar el mío
               </a>
             </div>
 
-            <div className="relative mt-10 flex h-[300px] w-full max-w-3xl items-center justify-center">
+            <div className="relative mt-12 flex h-[380px] w-full max-w-4xl items-center justify-center">
               <button
                 type="button"
                 aria-label="Proyecto anterior"
@@ -140,8 +155,8 @@ export function Projects() {
                       isActive ? setOpenProject(project) : setActiveIndex(index)
                     }
                     animate={{
-                      x: offset * 122,
-                      y: distance * 24,
+                      x: offset * 150,
+                      y: distance * 28,
                       rotate: offset * 9,
                       scale: Math.max(1 - distance * 0.13, 0.5),
                       opacity: distance > 3 ? 0 : 1,
@@ -164,7 +179,7 @@ export function Projects() {
                           src={project.images[0]}
                           alt=""
                           fill
-                          sizes="190px"
+                          sizes="230px"
                           className="object-cover object-top"
                         />
                       ) : (
