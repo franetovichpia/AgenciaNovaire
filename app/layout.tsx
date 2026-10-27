@@ -8,6 +8,9 @@ import {
 
 import "./globals.css";
 
+import { JsonLd } from "@/components/common/json-ld";
+import { organizationSchema, websiteSchema } from "@/lib/seo";
+
 // Tipografías
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -89,6 +92,14 @@ export const metadata: Metadata = {
     title: "Novaire Studio | Diseño Web y Soluciones Digitales",
     description:
       "Sitios web para profesionales y empresas, e-commerce, sistemas de gestión y automatizaciones.",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Novaire Studio — Diseño web para profesionales y empresas",
+      },
+    ],
   },
 
   twitter: {
@@ -96,6 +107,7 @@ export const metadata: Metadata = {
     title: "Novaire Studio | Diseño Web y Soluciones Digitales",
     description:
       "Soluciones digitales a medida para profesionales, empresas y emprendimientos.",
+    images: ["/og.jpg"],
   },
 };
 
@@ -113,6 +125,7 @@ export default function RootLayout({
             __html: themeScript,
           }}
         />
+        <JsonLd data={[organizationSchema, websiteSchema]} />
       </head>
 
       <body

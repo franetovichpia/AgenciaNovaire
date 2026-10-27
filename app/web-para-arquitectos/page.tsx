@@ -15,7 +15,10 @@ export const metadata: Metadata = {
     title: `${niche.seoTitle} | Novaire Studio`,
     description: niche.seoDescription,
     url: `https://www.studionovaire.com${niche.path}`,
+    siteName: "Novaire Studio",
+    locale: "es_AR",
     type: "website",
+    images: [{ url: "/og.jpg", width: 1200, height: 630 }],
   },
 };
 

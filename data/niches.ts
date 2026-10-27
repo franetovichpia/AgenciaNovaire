@@ -46,7 +46,7 @@ export const niches: Niche[] = [
   {
     slug: "arquitectos",
     path: "/web-para-arquitectos",
-    seoTitle: "Diseño de Páginas Web para Arquitectos y Estudios de Arquitectura",
+    seoTitle: "Páginas Web para Arquitectos y Estudios",
     seoDescription:
       "Sitios web para arquitectos y estudios de arquitectura: portfolio de obras, galería de proyectos, formulario de consultas y diseño adaptado a celulares.",
     eyebrow: "Novaire Studio · Diseño web para arquitectos",
@@ -153,7 +153,7 @@ export const niches: Niche[] = [
   {
     slug: "inmobiliarias",
     path: "/web-para-inmobiliarias",
-    seoTitle: "Diseño de Páginas Web para Inmobiliarias y Desarrollistas",
+    seoTitle: "Páginas Web para Inmobiliarias",
     seoDescription:
       "Sitios web para inmobiliarias y desarrollos: catálogo de propiedades, fichas con fotos, formulario de consultas y contacto directo por WhatsApp.",
     eyebrow: "Novaire Studio · Diseño web para inmobiliarias",
@@ -228,7 +228,7 @@ export const niches: Niche[] = [
   {
     slug: "turismo",
     path: "/web-para-turismo",
-    seoTitle: "Diseño de Páginas Web para Turismo y Agencias de Viajes",
+    seoTitle: "Web para Agencias de Viajes y Turismo",
     seoDescription:
       "Sitios web para agencias de viajes, alojamientos y emprendimientos turísticos: paquetes, galerías, reservas y consultas por WhatsApp.",
     eyebrow: "Novaire Studio · Diseño web para turismo",
@@ -343,9 +343,9 @@ export const niches: Niche[] = [
   {
     slug: "esteticas",
     path: "/web-para-esteticas",
-    seoTitle: "Diseño de Páginas Web para Centros de Estética con Reserva de Turnos",
+    seoTitle: "Páginas Web para Centros de Estética",
     seoDescription:
-      "Sitios web para centros de estética, spas y salones de belleza: catálogo de tratamientos con precios, reserva de turnos online con calendario y panel de gestión de agenda.",
+      "Sitios web para centros de estética y spas con catálogo de tratamientos, reserva de turnos online con calendario y panel de gestión de agenda.",
     eyebrow: "Novaire Studio · Diseño web para estéticas",
     title: "Que tus clientas reserven su turno",
     accent: "sin escribirte.",
@@ -445,7 +445,7 @@ export const niches: Niche[] = [
   {
     slug: "academias",
     path: "/web-para-academias",
-    seoTitle: "Diseño de Páginas Web para Academias, Institutos y Cursos",
+    seoTitle: "Páginas Web para Academias y Cursos",
     seoDescription:
       "Sitios web para academias, institutos y cursos de oficios: catálogo de cursos, próximas fechas con cupos, metodología y consultas o inscripción por WhatsApp.",
     eyebrow: "Novaire Studio · Diseño web para academias y cursos",
@@ -538,7 +538,7 @@ export const niches: Niche[] = [
   {
     slug: "concesionarias",
     path: "/web-para-concesionarias",
-    seoTitle: "Diseño de Páginas Web para Concesionarias y Agencias de Autos",
+    seoTitle: "Páginas Web para Concesionarias de Autos",
     seoDescription:
       "Sitios web para concesionarias y agencias de autos: stock de vehículos con buscador, cotización de permuta, financiación y contacto directo por WhatsApp.",
     eyebrow: "Novaire Studio · Diseño web para concesionarias",

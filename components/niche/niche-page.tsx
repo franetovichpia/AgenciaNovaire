@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/common/container";
+import { JsonLd } from "@/components/common/json-ld";
 import { Reveal } from "@/components/common/reveal";
 import { ProcessBand } from "@/components/editorial/process-band";
 import { Ticker } from "@/components/editorial/ticker";
@@ -10,6 +11,7 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { niches, type Niche } from "@/data/niches";
 import { projects, siteConfig } from "@/data/site";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/seo";
 
 export function NichePage({ niche }: { niche: Niche }) {
   const examples = niche.exampleSlugs.flatMap((slug) =>
@@ -22,6 +24,20 @@ export function NichePage({ niche }: { niche: Niche }) {
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: niche.seoTitle,
+            description: niche.seoDescription,
+            path: niche.path,
+          }),
+          faqSchema(niche.faq),
+          breadcrumbSchema([
+            { name: "Inicio", path: "/" },
+            { name: niche.seoTitle, path: niche.path },
+          ]),
+        ]}
+      />
       <Header />
 
       <main>
