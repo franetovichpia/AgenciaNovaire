@@ -5,6 +5,8 @@
       COLORES (monocromo)
   =========================== */
 
+  --glass: rgba(255, 255, 255, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.75);
   --page: #ddd7c8;
   --background: #f7f4ed;
   --foreground: #0a0a0a;
@@ -46,6 +48,8 @@
 }
 
 :root[data-theme="dark"] {
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.14);
   --page: #0d0d0d;
   --background: #1d1d1d;
   --foreground: #f2f0ea;
@@ -412,6 +416,72 @@ select {
   --primary: #f2f0ea;
   --primary-foreground: #0a0a0a;
   --border: #2e2e2e;
+  --accent: #fff1b5;
+  --accent-foreground: #0a0a0a;
+  --glass: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(255, 255, 255, 0.18);
   background: #0a0a0a;
   color: #f2f0ea;
+}
+
+
+/* ===========================
+    VIDRIO, RESALTADO Y CINTA VERTICAL
+=========================== */
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 40px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Frase resaltada con #FFF1B5: marcador sobre claro, texto amarillo sobre oscuro */
+.hl {
+  background: #fff1b5;
+  color: #0a0a0a;
+  padding: 0 0.25em;
+  border-radius: 0.3em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.card-ink .hl {
+  background: none;
+  color: #fff1b5;
+  padding: 0;
+}
+
+.card-ink .font-display .italic {
+  color: #fff1b5;
+}
+
+@keyframes ticker-y {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.vticker-track {
+  animation: ticker-y 28s linear infinite;
+}
+
+.vticker-mask {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #fff1b5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vticker-track {
+    animation: none;
+  }
 }

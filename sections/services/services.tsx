@@ -113,22 +113,44 @@ export function Services() {
       id="services"
       className="card-section card-ink relative py-16 text-[#f3efe8] sm:py-24"
     >
-      <Container>
+      <div className="pointer-events-none absolute -left-20 top-10 h-80 w-80 rounded-full bg-[#fff1b5]/15 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 h-80 w-80 rounded-full bg-white/10 blur-[120px]" />
+      <Container className="relative">
         <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:gap-16">
-          <Reveal direction="left" className="flex items-end gap-5 lg:block">
-            <h2 className="font-impact text-5xl leading-none text-accent sm:text-6xl vertical-word-lg lg:text-[5rem]">
+          <Reveal direction="left" className="relative lg:min-h-[28rem] lg:w-24 lg:self-stretch">
+            <h2 className="font-impact text-5xl leading-none text-accent sm:text-6xl lg:hidden">
               Servicios
             </h2>
 
-            <p className="max-w-[16rem] pb-1 text-sm leading-7 text-white/65 lg:hidden">
-              Productos digitales pensados para comunicar, vender, organizar y
-              simplificar procesos.
-            </p>
+            <div
+              aria-hidden="true"
+              className="vticker-mask absolute inset-0 hidden overflow-hidden lg:block"
+            >
+              <div className="vticker-track absolute inset-x-0 top-0 flex flex-col items-center">
+                {[0, 1].map((copy) => (
+                  <div key={copy} className="flex flex-col items-center">
+                    {[0, 1, 2].map((n) => (
+                      <div key={n} className="flex flex-col items-center">
+                        <span className="font-impact vertical-word-lg py-6 text-[3.5rem] leading-none text-accent">
+                          Servicios
+                        </span>
+                        <span className="h-2 w-2 rounded-full bg-accent" />
+                        <span className="font-impact text-outline vertical-word-lg py-6 text-[3.5rem] leading-none text-accent">
+                          Servicios
+                        </span>
+                        <span className="h-2 w-2 rounded-full bg-accent" />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
           </Reveal>
 
-          <Reveal>
-            <p className="mb-8 hidden max-w-xl text-base leading-8 text-white/65 lg:block">
-              Productos digitales pensados para comunicar, vender, organizar y
+          <Reveal className="glass relative rounded-[2rem] p-6 sm:p-9">
+            <p className="mb-8 max-w-xl text-base leading-8 text-white/80 sm:text-lg">
+              Productos digitales pensados para{" "}
+              <span className="hl">comunicar, vender, organizar</span> y
               simplificar procesos.
             </p>
 

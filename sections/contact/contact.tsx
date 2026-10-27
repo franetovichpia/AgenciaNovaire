@@ -35,7 +35,7 @@ export function Contact() {
             </span>
 
             <h2 className="mt-5 font-display text-4xl font-medium leading-[1.02] tracking-[-0.055em] sm:text-5xl">
-              Contanos qué querés crear.
+              Contanos <span className="hl">qué querés crear.</span>
             </h2>
 
             <p className="mt-7 max-w-lg text-base leading-8 text-muted-foreground">

@@ -15,19 +15,22 @@ const problems = [
 export function Needs() {
   return (
     <section id="solutions" className="card-section card-ink relative py-16 text-white sm:py-24">
+      <div className="pointer-events-none absolute -right-24 top-6 h-72 w-72 rounded-full bg-[#fff1b5]/20 blur-[110px]" />
+      <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-white/10 blur-[110px]" />
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.65, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.4, margin: "0px 0px -12% 0px" }}
+            transition={{ duration: 1.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#cdbda9]">El problema real</span>
-            <h2 className="mt-5 max-w-2xl font-display text-3xl font-medium leading-[1.05] tracking-[-0.055em] text-white sm:text-5xl">
-              No es falta de interés. Es que cuesta encontrarte, entenderte o reservar con vos.
+            <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[#fff1b5]">El problema real</span>
+            <h2 className="mt-5 max-w-xl font-display text-2xl text-white sm:text-3xl">
+              No es falta de interés. Es que cuesta{" "}
+              <span className="italic">encontrarte, entenderte o reservar con vos.</span>
             </h2>
-            <p className="mt-7 max-w-xl text-base leading-8 text-white/65">
+            <p className="mt-7 max-w-xl text-base leading-8 text-white/80 sm:text-lg">
               Estas son las cuatro cosas que más te están frenando ahora mismo. Diseñamos tu presencia digital para resolverlas, incluso cuando vos no estás conectado.
             </p>
           </motion.div>
@@ -39,11 +42,11 @@ export function Needs() {
                 initial={{ opacity: 0, x: 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.55, ease: "easeOut", delay: index * 0.1 }}
-                className="rounded-3xl border border-white/10 bg-white/[0.055] p-6 backdrop-blur-sm"
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.15 + index * 0.18 }}
+                className="glass rounded-[1.75rem] p-7"
               >
-                <Icon className="h-5 w-5 text-[#cdbda9]" />
-                <p className="mt-5 text-sm leading-7 text-white/75">{text}</p>
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#fff1b5] text-black"><Icon className="h-5 w-5" /></span>
+                <p className="mt-5 text-base leading-7 text-white">{text}</p>
               </motion.div>
             ))}
           </div>

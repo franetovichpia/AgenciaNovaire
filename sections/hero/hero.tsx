@@ -40,7 +40,7 @@ export function Hero() {
         >
           Diseñamos páginas web para arquitectos, inmobiliarias, turismo y
           otros profesionales. También desarrollamos tiendas online, sistemas
-          de gestión y automatizaciones para hacer crecer tu negocio.
+          de gestión y automatizaciones para <span className="hl">hacer crecer tu negocio.</span>
         </motion.p>
 
         <motion.div
@@ -51,7 +51,7 @@ export function Hero() {
         >
           <Link
             href="/agendar"
-            className="inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-black transition hover:opacity-85"
+            className="inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-black transition duration-300 hover:bg-[#fff1b5] hover:shadow-[0_0_44px_rgba(255,241,181,0.6)]"
           >
             Agendar una reunión gratis
             <ArrowUpRight className="h-4 w-4" />
