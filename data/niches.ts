@@ -2,7 +2,7 @@ export type Showcase = {
   eyebrow: string;
   title: string;
   text: string;
-  layout: "duo" | "phones" | "single";
+  layout: "duo" | "phones" | "single" | "wide" | "steps";
   images: { src: string; alt: string; caption?: string }[];
 };
 
@@ -284,6 +284,108 @@ export const niches: Niche[] = [
       },
     ],
     whatsappText: "Hola! Quiero una web para mi emprendimiento de turismo.",
+  },
+  {
+    slug: "esteticas",
+    path: "/web-para-esteticas",
+    seoTitle: "Diseño de Páginas Web para Centros de Estética con Reserva de Turnos",
+    seoDescription:
+      "Sitios web para centros de estética, spas y salones de belleza: catálogo de tratamientos con precios, reserva de turnos online con calendario y panel de gestión de agenda.",
+    eyebrow: "Novaire Studio · Diseño web para estéticas",
+    title: "Que tus clientas reserven su turno",
+    accent: "sin escribirte.",
+    intro:
+      "Sitios web para centros de estética, spas y salones de belleza, con un catálogo de tratamientos, reserva de turnos online y gestión de agenda en un solo lugar.",
+    image: "/brand/ambiente.jpg",
+    imagePosition: "35% 45%",
+    includesTitle: "Qué incluye tu web de estética y gestión de turnos",
+    includes: [
+      {
+        title: "Catálogo de tratamientos",
+        text: "Cada servicio con su descripción, duración y precio de referencia, ordenado por categorías y con buscador.",
+      },
+      {
+        title: "Reserva de turnos online",
+        text: "Tus clientas eligen servicio, profesional, día y horario en pocos pasos, desde el celular.",
+      },
+      {
+        title: "Calendario y disponibilidad",
+        text: "Los horarios ocupados dejan de ofrecerse solos: sin superposiciones ni mensajes de ida y vuelta.",
+      },
+      {
+        title: "Confirmación y recordatorios",
+        text: "La clienta recibe la confirmación de su turno y un aviso para recordárselo.",
+      },
+      {
+        title: "Panel de gestión de agenda",
+        text: "Vos ves y administrás los turnos, los servicios, los precios y los profesionales en un panel simple.",
+      },
+      {
+        title: "Diseño a tu medida",
+        text: "Una web con la identidad de tu centro: fotos, colores y tipografía que transmiten calma y confianza.",
+      },
+    ],
+    exampleSlugs: [],
+    showcases: [
+      {
+        eyebrow: "Demo · Centro de estética",
+        title: "Una web que transmite calma y vende tus tratamientos.",
+        text: "Así puede verse tu centro de estética: fotografías cuidadas, tus tratamientos más elegidos a la vista y un botón para reservar siempre presente.",
+        layout: "wide",
+        images: [
+          {
+            src: "/projects/esteticas/sitio-inicio.jpg",
+            alt: "Inicio de la web de un centro de estética con tratamientos y botón de reservar turno",
+          },
+          {
+            src: "/projects/esteticas/sitio-reservar.jpg",
+            alt: "Sección final de la web de estética con servicios, horarios y contacto",
+          },
+        ],
+      },
+      {
+        eyebrow: "Gestión de turnos",
+        title: "De elegir el servicio a la reserva confirmada, en tres pasos.",
+        text: "El sistema de turnos guía a tus clientas: eligen el tratamiento, ven solo los días y horarios libres y reciben la confirmación al instante.",
+        layout: "steps",
+        images: [
+          {
+            src: "/projects/esteticas/turnos-servicios.jpg",
+            alt: "Paso 1 de la reserva: lista de servicios con precios y buscador",
+            caption: "Elegí el servicio",
+          },
+          {
+            src: "/projects/esteticas/turnos-calendario.jpg",
+            alt: "Paso 3 de la reserva: calendario con días y horarios disponibles",
+            caption: "Día y horario disponibles",
+          },
+          {
+            src: "/projects/esteticas/turnos-confirmacion.jpg",
+            alt: "Pantalla de reserva confirmada",
+            caption: "Reserva confirmada",
+          },
+        ],
+      },
+    ],
+    steps,
+    faq: [
+      {
+        question: "¿Mis clientas pueden reservar turno desde el celular?",
+        answer:
+          "Sí. El sistema de reservas está pensado primero para el celular: eligen servicio, día y horario en pocos pasos.",
+      },
+      {
+        question: "¿Puedo manejar varios profesionales y servicios?",
+        answer:
+          "Sí. Cada servicio tiene su duración y precio, y los turnos pueden asignarse a distintos profesionales.",
+      },
+      {
+        question: "¿Voy a poder cambiar precios y horarios yo misma?",
+        answer:
+          "Sí. Incluimos un panel de gestión para editar servicios, precios, horarios y ver la agenda sin depender de un desarrollador.",
+      },
+    ],
+    whatsappText: "Hola! Quiero una web con reserva de turnos para mi centro de estética.",
   },
 ];
 

@@ -186,6 +186,48 @@ export function NichePage({ niche }: { niche: Niche }) {
                     />
                   </div>
                 </Reveal>
+              ) : showcase.layout === "wide" ? (
+                <div className="mt-14 space-y-6 sm:space-y-8">
+                  {showcase.images.map((image, index) => (
+                    <Reveal key={image.src} delay={index * 0.1}>
+                      <div className="relative aspect-[1892/870] overflow-hidden rounded-[1.5rem] shadow-2xl shadow-black/15 ring-1 ring-black/5 sm:rounded-[2rem]">
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          quality={95}
+                          sizes="(min-width:1280px) 1200px, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              ) : showcase.layout === "steps" ? (
+                <div className="mt-14 grid gap-8 md:grid-cols-3">
+                  {showcase.images.map((image, index) => (
+                    <Reveal key={image.src} delay={index * 0.12}>
+                      <figure>
+                        <div className="relative aspect-[941/861] overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/15 ring-1 ring-black/5">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            quality={95}
+                            sizes="(min-width:768px) 380px, 100vw"
+                            className="object-cover"
+                          />
+                        </div>
+                        {image.caption ? (
+                          <figcaption className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                            {String(index + 1).padStart(2, "0")} —{" "}
+                            {image.caption}
+                          </figcaption>
+                        ) : null}
+                      </figure>
+                    </Reveal>
+                  ))}
+                </div>
               ) : showcase.layout === "duo" ? (
                 <div className="mt-14 grid gap-6 sm:grid-cols-2 sm:gap-8">
                   {showcase.images.map((image, index) => (
