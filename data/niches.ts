@@ -2,6 +2,7 @@ export type Showcase = {
   eyebrow: string;
   title: string;
   text: string;
+  ratio?: string;
   layout: "duo" | "phones" | "single" | "wide" | "steps" | "gallery";
   images: { src: string; alt: string; caption?: string }[];
 };
@@ -291,6 +292,30 @@ export const niches: Niche[] = [
             src: "/projects/turismo-demo/contacto.jpg",
             alt: "Sección de contacto por WhatsApp de una agencia de viajes",
             caption: "Contacto por WhatsApp",
+          },
+        ],
+      },
+      {
+        eyebrow: "Demo · Viajes de surf",
+        title: "Una marca con identidad propia, desde el primer scroll.",
+        text: "Para un emprendimiento de viajes de surf: un inicio con imágenes a pantalla completa, destinos en movimiento y un formulario que arma la consulta y la envía por WhatsApp.",
+        ratio: "1100 / 865",
+        layout: "steps",
+        images: [
+          {
+            src: "/projects/surf-trips/inicio.jpg",
+            alt: "Inicio de la web Surf Trips con surfistas frente al mar",
+            caption: "Inicio con imagen a pantalla completa",
+          },
+          {
+            src: "/projects/surf-trips/destinos.jpg",
+            alt: "Franja animada de destinos como Sri Lanka, Europa y Costa Rica",
+            caption: "Destinos en movimiento",
+          },
+          {
+            src: "/projects/surf-trips/formulario.jpg",
+            alt: "Formulario de consulta con destino, nivel y cantidad de personas",
+            caption: "Formulario que llega por WhatsApp",
           },
         ],
       },

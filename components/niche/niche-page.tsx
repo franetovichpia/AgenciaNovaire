@@ -233,7 +233,10 @@ export function NichePage({ niche }: { niche: Niche }) {
                   {showcase.images.map((image, index) => (
                     <Reveal key={image.src} delay={index * 0.12}>
                       <figure>
-                        <div className="relative aspect-[941/861] overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/15 ring-1 ring-black/5">
+                        <div
+                          className="relative overflow-hidden rounded-[1.5rem] shadow-xl shadow-black/15 ring-1 ring-black/5"
+                          style={{ aspectRatio: showcase.ratio ?? "941 / 861" }}
+                        >
                           <Image
                             src={image.src}
                             alt={image.alt}
