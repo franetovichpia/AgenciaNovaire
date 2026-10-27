@@ -37,7 +37,7 @@ export const questions = [
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-secondary/40 py-16 sm:py-24">
+    <section id="faq" className="card-section bg-background py-16 sm:py-24">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <Reveal direction="left">

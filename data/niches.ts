@@ -9,6 +9,7 @@ export type Showcase = {
 
 export type Niche = {
   slug: string;
+  label: string;
   path: string;
   seoTitle: string;
   seoDescription: string;
@@ -43,6 +44,7 @@ const steps = [
 export const niches: Niche[] = [
   {
     slug: "arquitectos",
+    label: "Arquitectos",
     path: "/web-para-arquitectos",
     seoTitle: "Páginas Web para Arquitectos y Estudios",
     seoDescription:
@@ -148,6 +150,7 @@ export const niches: Niche[] = [
   },
   {
     slug: "inmobiliarias",
+    label: "Inmobiliarias",
     path: "/web-para-inmobiliarias",
     seoTitle: "Páginas Web para Inmobiliarias",
     seoDescription:
@@ -221,6 +224,7 @@ export const niches: Niche[] = [
   },
   {
     slug: "turismo",
+    label: "Turismo",
     path: "/web-para-turismo",
     seoTitle: "Web para Agencias de Viajes y Turismo",
     seoDescription:
@@ -334,6 +338,7 @@ export const niches: Niche[] = [
   },
   {
     slug: "esteticas",
+    label: "Estéticas",
     path: "/web-para-esteticas",
     seoTitle: "Páginas Web para Centros de Estética",
     seoDescription:
@@ -434,6 +439,7 @@ export const niches: Niche[] = [
   },
   {
     slug: "academias",
+    label: "Academias",
     path: "/web-para-academias",
     seoTitle: "Páginas Web para Academias y Cursos",
     seoDescription:
@@ -525,6 +531,7 @@ export const niches: Niche[] = [
   },
   {
     slug: "concesionarias",
+    label: "Concesionarias",
     path: "/web-para-concesionarias",
     seoTitle: "Páginas Web para Concesionarias de Autos",
     seoDescription:

@@ -111,7 +111,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden bg-[#0a0a0a] py-16 text-[#f3efe8] sm:py-24"
+      className="card-section card-ink relative py-16 text-[#f3efe8] sm:py-24"
     >
       <Container>
         <div className="grid gap-8 lg:grid-cols-[auto_1fr] lg:gap-16">

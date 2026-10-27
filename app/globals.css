@@ -5,7 +5,8 @@
       COLORES (monocromo)
   =========================== */
 
-  --background: #f2f0ea;
+  --page: #ddd7c8;
+  --background: #f7f4ed;
   --foreground: #0a0a0a;
 
   --card: #f8f6f1;
@@ -45,7 +46,8 @@
 }
 
 :root[data-theme="dark"] {
-  --background: #0a0a0a;
+  --page: #0d0d0d;
+  --background: #1d1d1d;
   --foreground: #f2f0ea;
 
   --card: #141414;
@@ -70,6 +72,7 @@
 }
 
 @theme inline {
+  --color-page: var(--page);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
@@ -120,7 +123,7 @@ body {
   margin: 0;
   overflow-x: hidden;
 
-  background: var(--background);
+  background: var(--page);
   color: var(--foreground);
 
   font-family: var(--font-sans);
@@ -223,7 +226,7 @@ textarea,
 select {
   outline: none;
   border: 1px solid var(--border);
-  background: white;
+  background: var(--background);
 }
 
 /* ===========================
@@ -376,4 +379,39 @@ select {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
   }
+}
+
+
+/* ===========================
+    RECUADROS
+=========================== */
+
+.card-section {
+  margin: 0.5rem;
+  border-radius: 1.75rem;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--foreground) 9%, transparent);
+}
+
+@media (min-width: 640px) {
+  .card-section {
+    margin: 0.75rem 1rem;
+    border-radius: 2.5rem;
+  }
+}
+
+/* Recuadro oscuro: redefine los colores para todo su contenido */
+.card-ink {
+  --background: #0a0a0a;
+  --foreground: #f2f0ea;
+  --card: #151515;
+  --card-foreground: #f2f0ea;
+  --secondary: #1a1a1a;
+  --muted: #121212;
+  --muted-foreground: #a8a59e;
+  --primary: #f2f0ea;
+  --primary-foreground: #0a0a0a;
+  --border: #2e2e2e;
+  background: #0a0a0a;
+  color: #f2f0ea;
 }

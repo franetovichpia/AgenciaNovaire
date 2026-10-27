@@ -9,9 +9,8 @@ import { HeroBackdrop } from "@/components/common/hero-backdrop";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[88svh] items-end overflow-hidden bg-[#0a0a0a] text-white">
+    <section className="card-section card-ink relative flex min-h-[80svh] items-end text-white">
       <HeroBackdrop />
-      <div className="absolute inset-x-0 top-24 border-t border-white/15" />
 
       <Container className="relative pb-16 pt-40 sm:pb-24">
         <motion.p

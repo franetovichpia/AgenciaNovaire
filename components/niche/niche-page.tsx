@@ -41,10 +41,9 @@ export function NichePage({ niche }: { niche: Niche }) {
       />
       <Header />
 
-      <main>
-        <section className="relative flex min-h-[72svh] items-end overflow-hidden bg-[#0a0a0a] text-white">
+      <main className="pt-16">
+        <section className="card-section card-ink relative flex min-h-[68svh] items-end text-white">
           <HeroBackdrop />
-          <div className="absolute inset-x-0 top-24 border-t border-white/15" />
 
           <Container className="relative pb-14 pt-32 sm:pb-20">
             <p className="font-serif-italic text-xl text-white/80 sm:text-2xl">
@@ -77,7 +76,7 @@ export function NichePage({ niche }: { niche: Niche }) {
 
         <Ticker />
 
-        <section className="bg-[#0a0a0a] py-12 text-[#f3efe8] sm:py-16">
+        <section className="card-section card-ink py-14 text-[#f3efe8] sm:py-20">
           <Container>
             <div className="flex items-start gap-6 sm:gap-10">
               <Reveal direction="left">
@@ -120,7 +119,7 @@ export function NichePage({ niche }: { niche: Niche }) {
         </section>
 
         {examples.length > 0 ? (
-          <section className="py-20 sm:py-28">
+          <section className="card-section bg-background py-14 sm:py-20">
             <Container>
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
                 Trabajos reales
@@ -161,7 +160,7 @@ export function NichePage({ niche }: { niche: Niche }) {
         {niche.showcases?.map((showcase) => (
           <section
             key={showcase.title}
-            className="overflow-hidden py-20 sm:py-28"
+            className="card-section bg-background py-14 sm:py-20"
           >
             <Container>
               <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
@@ -322,7 +321,7 @@ export function NichePage({ niche }: { niche: Niche }) {
 
         <ProcessBand steps={niche.steps} />
 
-        <section className="py-20 sm:py-28">
+        <section className="card-section bg-background py-14 sm:py-20">
           <Container>
             <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
               <Reveal direction="left">
@@ -353,7 +352,7 @@ export function NichePage({ niche }: { niche: Niche }) {
           </Container>
         </section>
 
-        <section className="bg-[#0a0a0a] py-12 text-[#f3efe8] sm:py-16">
+        <section className="card-section card-ink py-14 text-[#f3efe8] sm:py-20">
           <Container>
             <Reveal className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
               <div>
@@ -392,7 +391,7 @@ export function NichePage({ niche }: { niche: Niche }) {
                   href={item.path}
                   className="text-white underline-offset-4 hover:underline"
                 >
-                  {item.slug.charAt(0).toUpperCase() + item.slug.slice(1)}
+                  {item.label}
                 </Link>
               ))}
             </div>
