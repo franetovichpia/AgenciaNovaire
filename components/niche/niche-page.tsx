@@ -150,6 +150,72 @@ export function NichePage({ niche }: { niche: Niche }) {
           </section>
         ) : null}
 
+        {niche.showcases?.map((showcase) => (
+          <section
+            key={showcase.title}
+            className="overflow-hidden py-12 sm:py-16"
+          >
+            <Container>
+              <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+                <Reveal direction="left">
+                  <span className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+                    {showcase.eyebrow}
+                  </span>
+                  <h2 className="mt-4 font-display text-3xl font-medium leading-[1.08] tracking-[-0.04em] sm:text-4xl">
+                    {showcase.title}
+                  </h2>
+                </Reveal>
+                <Reveal direction="right">
+                  <p className="max-w-xl text-base leading-8 text-muted-foreground">
+                    {showcase.text}
+                  </p>
+                </Reveal>
+              </div>
+
+              {showcase.layout === "duo" ? (
+                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                  {showcase.images.map((image, index) => (
+                    <Reveal key={image.src} delay={index * 0.12}>
+                      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          sizes="(min-width:640px) 50vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              ) : (
+                <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+                  {showcase.images.map((image, index) => (
+                    <Reveal key={image.src} delay={index * 0.1}>
+                      <figure>
+                        <div className="relative aspect-[9/17] overflow-hidden rounded-[1.5rem] ring-1 ring-border">
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            sizes="(min-width:1024px) 25vw, 50vw"
+                            className="object-cover object-top"
+                          />
+                        </div>
+                        {image.caption ? (
+                          <figcaption className="mt-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                            {image.caption}
+                          </figcaption>
+                        ) : null}
+                      </figure>
+                    </Reveal>
+                  ))}
+                </div>
+              )}
+            </Container>
+          </section>
+        ))}
+
         <ProcessBand steps={niche.steps} />
 
         <section className="py-12 sm:py-16">

@@ -1,3 +1,11 @@
+export type Showcase = {
+  eyebrow: string;
+  title: string;
+  text: string;
+  layout: "duo" | "phones";
+  images: { src: string; alt: string; caption?: string }[];
+};
+
 export type Niche = {
   slug: string;
   path: string;
@@ -12,6 +20,7 @@ export type Niche = {
   includesTitle: string;
   includes: { title: string; text: string }[];
   exampleSlugs: string[];
+  showcases?: Showcase[];
   steps: { title: string; text: string }[];
   faq: { question: string; answer: string }[];
   whatsappText: string;
@@ -73,7 +82,53 @@ export const niches: Niche[] = [
         text: "Opcionalmente, un panel para que cargues y edites tus proyectos sin depender de nadie.",
       },
     ],
-    exampleSlugs: ["bim-3d-5d", "landing-arquitecta", "arqstudio"],
+    exampleSlugs: [],
+    showcases: [
+      {
+        eyebrow: "Visor 3D",
+        title: "Tus proyectos, para recorrer en pantalla.",
+        text: "Para un arquitecto desarrollamos un portfolio con visor y recorrido 3D del modelo, filtros por elementos y un panel para administrar sus proyectos. El cliente explora la obra desde la computadora o la tablet.",
+        layout: "duo",
+        images: [
+          {
+            src: "/projects/bim-3d-5d/monitor.jpg",
+            alt: "Portfolio de arquitectura con visor 3D en monitor y tablet",
+          },
+          {
+            src: "/projects/bim-3d-5d/escritorio.jpg",
+            alt: "Sitio web de un arquitecto con visor 3D en laptop y monitor",
+          },
+        ],
+      },
+      {
+        eyebrow: "Sitio de obras",
+        title: "Cada obra, contada con fotografías grandes.",
+        text: "Para un taller de arquitectura y paisaje diseñamos un sitio donde cada obra tiene su propia presentación, con imágenes a pantalla completa y un camino directo para consultar.",
+        layout: "phones",
+        images: [
+          {
+            src: "/projects/landing-arquitecta/inicio-taller.jpg",
+            alt: "Inicio de la web de un taller de arquitectura",
+            caption: "Inicio",
+          },
+          {
+            src: "/projects/landing-arquitecta/obra-ocampo.jpg",
+            alt: "Presentación de la obra Edificio Ocampo",
+            caption: "Obras construidas",
+          },
+          {
+            src: "/projects/landing-arquitecta/obra-laguna.jpg",
+            alt: "Presentación de la obra Casa Laguna",
+            caption: "Cada obra, una historia",
+          },
+          {
+            src: "/projects/landing-arquitecta/imaginando.jpg",
+            alt: "Sección para iniciar una consulta: casa propia o proyecto de inversión",
+            caption: "Un primer paso para consultar",
+          },
+        ],
+      },
+    ],
     steps,
     faq: [
       {
