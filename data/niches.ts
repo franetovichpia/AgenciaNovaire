@@ -442,6 +442,187 @@ export const niches: Niche[] = [
     ],
     whatsappText: "Hola! Quiero una web con reserva de turnos para mi centro de estética.",
   },
+  {
+    slug: "academias",
+    path: "/web-para-academias",
+    seoTitle: "Diseño de Páginas Web para Academias, Institutos y Cursos",
+    seoDescription:
+      "Sitios web para academias, institutos y cursos de oficios: catálogo de cursos, próximas fechas con cupos, metodología y consultas o inscripción por WhatsApp.",
+    eyebrow: "Novaire Studio · Diseño web para academias y cursos",
+    title: "Que tus cursos se llenen con",
+    accent: "una web que enseña a elegir.",
+    intro:
+      "Sitios web para academias, institutos y cursos de oficios que muestran su propuesta con claridad, publican las próximas fechas y convierten visitas en inscripciones.",
+    image: "/brand/ambiente.jpg",
+    imagePosition: "70% 70%",
+    includesTitle: "Qué incluye tu web de cursos y formación",
+    includes: [
+      {
+        title: "Catálogo de cursos",
+        text: "Cada curso con su contenido, duración, modalidad y a quién está dirigido.",
+      },
+      {
+        title: "Próximas fechas y cupos",
+        text: "Calendario de inicios con horarios y lugares disponibles, siempre a la vista.",
+      },
+      {
+        title: "Inscripción y consultas",
+        text: "Botón de consulta por WhatsApp en cada curso y formulario para reservar tu lugar.",
+      },
+      {
+        title: "Tu metodología, bien contada",
+        text: "Cómo se aprende, quiénes enseñan y qué resultados esperar, para generar confianza.",
+      },
+      {
+        title: "Panel para actualizar fechas",
+        text: "Editá cursos, cupos y fechas por tu cuenta, sin depender de un desarrollador.",
+      },
+      {
+        title: "Adaptada a celulares",
+        text: "Tus futuros alumnos comparan opciones desde el celular: la web está pensada para esa pantalla.",
+      },
+    ],
+    exampleSlugs: [],
+    showcases: [
+      {
+        eyebrow: "Demo · Academia de cursos de mecánica",
+        title: "Una propuesta clara, con cursos y fechas a la vista.",
+        text: "Así puede verse tu academia: un inicio que dice qué se aprende, un listado de próximas fechas con cupos y un botón de consulta en cada una.",
+        layout: "gallery",
+        images: [
+          {
+            src: "/projects/academia-demo/inicio.jpg",
+            alt: "Inicio de la web de una academia de mecánica automotriz con botones de cursos y fechas",
+            caption: "Inicio y propuesta",
+          },
+          {
+            src: "/projects/academia-demo/fechas.jpg",
+            alt: "Listado de próximas fechas de cursos con cupos libres y botón de consulta",
+            caption: "Próximas fechas y cupos",
+          },
+        ],
+      },
+      {
+        eyebrow: "Metodología",
+        title: "Mostrá cómo se aprende, no solo qué se enseña.",
+        text: "Una sección de metodología con pasos numerados y una imagen del oficio ayuda a que el alumno entienda tu forma de enseñar antes de escribirte.",
+        layout: "wide",
+        images: [
+          {
+            src: "/projects/academia-demo/metodologia.jpg",
+            alt: "Sección de metodología de una academia con tres pasos y foto de un tablero de auto",
+          },
+        ],
+      },
+    ],
+    steps,
+    faq: [
+      {
+        question: "¿Puedo publicar las fechas y los cupos de cada curso?",
+        answer:
+          "Sí. Armamos un listado de próximas fechas con horarios y cupos, y un panel para que lo actualices vos.",
+      },
+      {
+        question: "¿Los alumnos pueden inscribirse desde la web?",
+        answer:
+          "Pueden consultar o reservar su lugar con un formulario o por WhatsApp. Si necesitás inscripción y pagos online, también lo evaluamos.",
+      },
+      {
+        question: "¿Sirve para cualquier tipo de curso?",
+        answer:
+          "Sí: oficios, idiomas, formación profesional, talleres y cursos online o presenciales.",
+      },
+    ],
+    whatsappText: "Hola! Quiero una web para mi academia de cursos.",
+  },
+  {
+    slug: "concesionarias",
+    path: "/web-para-concesionarias",
+    seoTitle: "Diseño de Páginas Web para Concesionarias y Agencias de Autos",
+    seoDescription:
+      "Sitios web para concesionarias y agencias de autos: stock de vehículos con buscador, cotización de permuta, financiación y contacto directo por WhatsApp.",
+    eyebrow: "Novaire Studio · Diseño web para concesionarias",
+    title: "Que tu stock se vea como lo que es:",
+    accent: "una oportunidad.",
+    intro:
+      "Sitios web para concesionarias y agencias de autos con stock actualizado, buscador de vehículos, cotización de permutas y contacto directo con tus vendedores.",
+    image: "/brand/ambiente.jpg",
+    imagePosition: "50% 50%",
+    includesTitle: "Qué incluye tu web de concesionaria",
+    includes: [
+      {
+        title: "Stock con buscador",
+        text: "Los vehículos disponibles, con filtros por tipo, marca y orden de ingreso.",
+      },
+      {
+        title: "Fichas con fotos y datos",
+        text: "Cada vehículo con su galería, año, kilómetros, precio y botón para consultar.",
+      },
+      {
+        title: "Cotización de permuta",
+        text: "Un formulario para que el cliente cargue fotos, kilómetros y descripción de su usado.",
+      },
+      {
+        title: "Consultas por WhatsApp",
+        text: "Botón flotante y contacto directo con el vendedor desde cada unidad.",
+      },
+      {
+        title: "Panel para cargar vehículos",
+        text: "Publicá, editá y marcá como vendidas tus unidades sin pedir cambios a nadie.",
+      },
+      {
+        title: "Comparador y trámites",
+        text: "Secciones para comparar unidades y consultar por gestoría y financiación.",
+      },
+    ],
+    exampleSlugs: [],
+    showcases: [
+      {
+        eyebrow: "Demo · Concesionaria",
+        title: "Un buscador de vehículos a primera vista.",
+        text: "Así puede verse tu agencia: un inicio contundente con buscador de stock, accesos a cotizar tu permuta y contacto directo por WhatsApp e Instagram.",
+        layout: "wide",
+        images: [
+          {
+            src: "/projects/concesionaria-demo/inicio.jpg",
+            alt: "Inicio de la web de una concesionaria con buscador de vehículos por tipo y marca",
+          },
+        ],
+      },
+      {
+        eyebrow: "Permuta",
+        title: "Convertí a quien quiere entregar su usado en consulta.",
+        text: "Un bloque destacado invita a cotizar el vehículo usado, con fotos y kilómetros, para tomarlo en parte de pago o como permuta.",
+        layout: "single",
+        ratio: "922 / 857",
+        images: [
+          {
+            src: "/projects/concesionaria-demo/permuta.jpg",
+            alt: "Bloque para cotizar un vehículo usado como permuta, con años de trayectoria",
+          },
+        ],
+      },
+    ],
+    steps,
+    faq: [
+      {
+        question: "¿Puedo cargar y actualizar el stock yo mismo?",
+        answer:
+          "Sí. Incluimos un panel para publicar, editar y marcar como vendidos tus vehículos.",
+      },
+      {
+        question: "¿Se puede conectar con WhatsApp y redes?",
+        answer:
+          "Sí. Cada unidad puede tener un botón de consulta por WhatsApp, y la web enlaza tu Instagram y otros canales.",
+      },
+      {
+        question: "¿Se puede ofrecer financiación y cotización de permutas?",
+        answer:
+          "Sí. Armamos formularios para cotizar el usado y consultar por financiación, que llegan directo a tus vendedores.",
+      },
+    ],
+    whatsappText: "Hola! Quiero una web para mi concesionaria.",
+  },
 ];
 
 export function getNiche(slug: string) {

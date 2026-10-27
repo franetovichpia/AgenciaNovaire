@@ -175,7 +175,10 @@ export function NichePage({ niche }: { niche: Niche }) {
 
               {showcase.layout === "single" ? (
                 <Reveal className="mt-14">
-                  <div className="relative mx-auto aspect-[4/5] max-w-2xl overflow-hidden rounded-[2rem] shadow-2xl shadow-black/15 ring-1 ring-black/5">
+                  <div
+                    className="relative mx-auto max-w-2xl overflow-hidden rounded-[2rem] shadow-2xl shadow-black/15 ring-1 ring-black/5"
+                    style={{ aspectRatio: showcase.ratio ?? "4 / 5" }}
+                  >
                     <Image
                       src={showcase.images[0].src}
                       alt={showcase.images[0].alt}
