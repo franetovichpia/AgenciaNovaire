@@ -4,6 +4,21 @@ import { SectionHeading } from "@/components/common/section-heading";
 
 export const questions = [
   {
+    question: "¿Qué es Novaire Studio?",
+    answer:
+      "Novaire Studio es un estudio de diseño y desarrollo web de Argentina. Hace páginas web a medida, tiendas online, sistemas de gestión, reservas de turnos online y automatizaciones para profesionales y empresas.",
+  },
+  {
+    question: "¿Para qué rubros trabajan?",
+    answer:
+      "Para arquitectos, inmobiliarias, turismo y agencias de viajes, centros de estética, academias y cursos, y concesionarias de autos. También trabajamos con otros profesionales y emprendimientos.",
+  },
+  {
+    question: "¿La primera reunión tiene costo?",
+    answer:
+      "No. La primera reunión es gratuita, dura 30 minutos y no tiene compromiso. Se agenda desde la página de reuniones del sitio.",
+  },
+  {
     question: "¿Cuánto tarda un proyecto?",
     answer:
       "Depende del alcance. Una landing page puede desarrollarse en pocas semanas, mientras que un sistema de gestión o una aplicación requiere más tiempo de análisis, diseño y desarrollo.",

@@ -75,6 +75,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "/",
+    languages: { "es-AR": "/" },
   },
 
   robots: {
@@ -120,7 +121,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es-AR" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
