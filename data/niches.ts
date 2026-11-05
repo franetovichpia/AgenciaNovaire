@@ -30,7 +30,7 @@ export type Niche = {
   whatsappText: string;
 };
 
-const steps = [
+export const steps = [
   {
     title: "Conversamos",
     text: "Una reunión de 30 minutos, sin costo, para conocer tu negocio y lo que necesitás.",

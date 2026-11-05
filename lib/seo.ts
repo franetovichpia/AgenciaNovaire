@@ -1,3 +1,5 @@
+import { niches } from "@/data/niches";
+import { zonePages } from "@/data/zones";
 import { siteConfig } from "@/data/site";
 
 export const SITE_URL = "https://www.studionovaire.com";
@@ -18,7 +20,18 @@ export const organizationSchema = {
     "Estudio de diseño y desarrollo web en Argentina: páginas web para profesionales y empresas, tiendas online, sistemas de gestión, reservas de turnos y automatizaciones a medida.",
   email: siteConfig.email,
   telephone: "+541121542210",
-  areaServed: { "@type": "Country", name: "Argentina" },
+  areaServed: [
+    { "@type": "Country", name: "Argentina" },
+    ...zonePages.flatMap((zone) =>
+      zone.groups.flatMap((group) =>
+        group.places.map((place) =>
+          zone.slug === "exterior"
+            ? { "@type": "Country", name: place }
+            : { "@type": "City", name: place },
+        ),
+      ),
+    ),
+  ],
   knowsAbout: [
     "Diseño web",
     "Desarrollo web a medida",
@@ -29,6 +42,33 @@ export const organizationSchema = {
   ],
   sameAs: [siteConfig.instagram.split("?")[0]],
   priceRange: "$$",
+  slogan: "Diseño web para profesionales y empresas",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Servicios de diseño y desarrollo web",
+    itemListElement: [
+      ...[
+        "Páginas web profesionales a medida",
+        "Sistemas de gestión a medida",
+        "Tiendas online y e-commerce",
+        "Aplicaciones móviles",
+        "Diseño UI/UX e interfaces digitales",
+        "Automatización de procesos",
+        "Reserva de turnos online",
+      ].map((name) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name },
+      })),
+      ...niches.map((niche) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: niche.seoTitle,
+          url: `${SITE_URL}${niche.path}`,
+        },
+      })),
+    ],
+  },
 };
 
 export const websiteSchema = {
@@ -79,7 +119,7 @@ export function serviceSchema(input: {
     description: input.description,
     url: `${SITE_URL}${input.path}`,
     provider: { "@id": ORG_ID },
-    areaServed: { "@type": "Country", name: "Argentina" },
+    areaServed: [{ "@type": "Country", name: "Argentina" }],
     inLanguage: "es-AR",
   };
 }

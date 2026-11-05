@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { Container } from "@/components/common/container";
 import { niches } from "@/data/niches";
+import { zonePages } from "@/data/zones";
 import { navigation, siteConfig } from "@/data/site";
 
 export function Footer() {
@@ -56,6 +57,15 @@ export function Footer() {
                     className="text-sm text-white/65 transition hover:text-white"
                   >
                     {item.label}
+                  </Link>
+                ))}
+                {zonePages.map((zone) => (
+                  <Link
+                    key={zone.slug}
+                    href={zone.path}
+                    className="text-sm text-white/65 transition hover:text-white"
+                  >
+                    {zone.label}
                   </Link>
                 ))}
               </div>
